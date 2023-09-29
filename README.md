@@ -1,2 +1,2 @@
 # pralinkhaira.github.io
-.
+..
