@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web3 Onboard Wizard</title>
+  <!-- Load JavaScript -->
+  <script src="app.js" defer></script>
+  <!-- Load CSS styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Load Boxicons for icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <!-- Header -->
+  <h1><u>Welcome to the Web3 Onboard Wizard!</u></h1>
+
+  <!-- Connect Wallet Section -->
+  <h2><i class='bx bxs-chevrons-right bx-flashing' ></i>Select the Wallet to Connect</h2>
+  <select id="walletSelect">
+    <option value="" disabled selected>Select A Wallet</option>
+    <!-- Wallet options -->
+    <option value="MetaMask">MetaMask</option>
+    <option value="EaseWallet">EaseWallet</option>
+    <option value="TrustWallet">Trust Wallet</option>
+    <option value="MyEtherWallet">MyEtherWallet</option>
+    <option value="CoinbaseWallet">Coinbase Wallet</option>
+    <option value="WalletConnect">WalletConnect</option>
+    <option value="LedgerLive">Ledger Live</option>
+    <option value="TrezorWallet">Trezor Wallet</option>
+    <option value="PortisWallet">Portis Wallet</option>
+    <option value="FortmaticWallet">Fortmatic Wallet</option>
+    <option value="CipherBrowser">Cipher Browser</option>
+    <!-- Add more wallet options as needed -->
+  </select>
+  <!-- Connect Wallet Button -->
+  <button id="connectBtn">Connect Wallet</button>
+
+  <!-- Create Wallet Section -->
+  <h2><i class='bx bxs-chevrons-right bx-flashing' ></i>Don't Have Any Wallet? Click Below</h2>
+  <p><b>Select the Wallet to Create</b></p>
+  <select id="walletSelectCreate">
+    <option value="" disabled selected>Select A Wallet</option>
+    <!-- Wallet options -->
+    <option value="MetaMask">MetaMask</option>
+    <option value="EaseWallet">EaseWallet</option>
+    <option value="TrustWallet">Trust Wallet</option>
+    <option value="MyEtherWallet">MyEtherWallet</option>
+    <option value="CoinbaseWallet">Coinbase Wallet</option>
+    <option value="WalletConnect">WalletConnect</option>
+    <option value="LedgerLive">Ledger Live</option>
+    <option value="TrezorWallet">Trezor Wallet</option>
+    <option value="PortisWallet">Portis Wallet</option>
+    <option value="FortmaticWallet">Fortmatic Wallet</option>
+    <option value="CipherBrowser">Cipher Browser</option>
+    <!-- Add more wallet options as needed -->
+  </select>
+  <!-- Create New Wallet Button -->
+  <button id="createBtn">Create New Wallet</button>
+
+  <!-- Token Transfer Section -->
+  <h2><i class='bx bxs-chevrons-right bx-flashing' ></i>Token Transfer</h2>
+  <div class="transfer-container">
+    <div class="transfer-option">
+      <p><b>Transfer To Wallet</b></p>
+      <select class="walletSelect">
+        <option value="" disabled selected>Select A Wallet</option>
+        <!-- Wallet options -->
+            <option value="MetaMask">MetaMask</option>
+            <option value="EaseWallet">EaseWallet</option>
+            <option value="TrustWallet">Trust Wallet</option>
+            <option value="MyEtherWallet">MyEtherWallet</option>
+            <option value="CoinbaseWallet">Coinbase Wallet</option>
+            <option value="WalletConnect">WalletConnect</option>
+            <option value="LedgerLive">Ledger Live</option>
+            <option value="TrezorWallet">Trezor Wallet</option>
+            <option value="PortisWallet">Portis Wallet</option>
+            <option value="FortmaticWallet">Fortmatic Wallet</option>
+            <option value="CipherBrowser">Cipher Browser</option>
+      </select>
+    </div>
+    <div class="transfer-option">
+      <p><b>Transfer From Wallet</b></p>
+      <select class="walletSelect">
+        <option value="" disabled selected>Select A Wallet</option>
+        <!-- Wallet options -->
+            <option value="MetaMask">MetaMask</option>
+            <option value="EaseWallet">EaseWallet</option>
+            <option value="TrustWallet">Trust Wallet</option>
+            <option value="MyEtherWallet">MyEtherWallet</option>
+            <option value="CoinbaseWallet">Coinbase Wallet</option>
+            <option value="WalletConnect">WalletConnect</option>
+            <option value="LedgerLive">Ledger Live</option>
+            <option value="TrezorWallet">Trezor Wallet</option>
+            <option value="PortisWallet">Portis Wallet</option>
+            <option value="FortmaticWallet">Fortmatic Wallet</option>
+            <option value="CipherBrowser">Cipher Browser</option>
+      </select>
+    </div>
+  </div>
+  <button id="transferBtn">Transfer Tokens</button>
+  <p><i class='bx bx-loader bx-spin' ></i>Status: <span id="status">Not Initiated</span></p>
+
+  <!-- Additional Features Section -->
+  <h2><i class='bx bxs-chevrons-right bx-flashing' ></i>Additional Features</h2>
+  <div class="feature-buttons">
+    <button id="swapBtn">One-Click Swap</button>
+    <button id="historyBtn">Transaction History</button>
+    <button id="backupBtn">Secure Backup</button>
+  </div>
+
+  <!-- Support for Additional Features Section -->
+  <section class="feature-support">
+    <h2><i class='bx bxs-chevrons-right bx-flashing' ></i>Support for Additional Features</h2>
+    <p><b>Select A Feature To Know More About It</b></p>
+    <select id="featureDropdown">
+      <option value="" disabled selected>Select an Additional Feature</option>
+      <option value="swap">One-Click Swap</option>
+      <option value="history">Transaction History</option>
+      <option value="backup">Secure Backup</option>
+    </select>
+    <div class="feature-description" id="featureDescription">
+      <!-- Descriptions will be displayed here based on the selected option -->
+    </div>
+  </section>
+
+  <script>
+    // JavaScript code to display feature descriptions based on selected option
+    const featureDropdown = document.getElementById("featureDropdown");
+    const featureDescription = document.getElementById("featureDescription");
+
+    featureDropdown.addEventListener("change", () => {
+      const selectedFeature = featureDropdown.value;
+      featureDescription.innerHTML = getDescription(selectedFeature);
+    });
+
+    function getDescription(feature) {
+      switch (feature) {
+        case "swap":
+          return "<h3>One-Click Swap:</h3><p>Instantly exchange one cryptocurrency for another with a single button press.</p>";
+        case "history":
+          return "<h3>Transaction History:</h3><p>View a record of all past transactions for your wallet, including transfers and interactions with dApps.</p>";
+        case "backup":
+          return "<h3>Secure Backup:</h3><p>Create a copy of your wallet's information and keys, ensuring you can recover access even if your device is lost or damaged.</p>";
+        default:
+          return "";
+      }
+    }
+
+    // Simulate actions
+    document.getElementById("connectBtn").addEventListener("click", () => {
+      alert("Wallet Connected!");
+    });
+
+    document.getElementById("createBtn").addEventListener("click", () => {
+      alert("New Wallet Created!");
+    });
+
+    document.getElementById("transferBtn").addEventListener("click", () => {
+      document.getElementById("status").textContent = "Signing and Executing Transfer...";
+      setTimeout(() => {
+        document.getElementById("status").textContent = "Transfer Completed!";
+      }, 2000);
+    });
+
+    document.getElementById("swapBtn").addEventListener("click", () => {
+      alert("Tokens Swapped!");
+    });
+
+    document.getElementById("historyBtn").addEventListener("click", () => {
+      alert("Transaction History: ...");
+    });
+
+    document.getElementById("backupBtn").addEventListener("click", () => {
+      alert("Wallet Backup Created!");
+    });
+  </script>
+</body>
+</html>

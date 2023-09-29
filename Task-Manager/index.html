@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task Manager</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Task Manager</h1>
+    <form>
+      <label for="new-task">New task:</label>
+      <input type="text" id="new-task" name="new-task">
+      <select id="task-category" name="task-category">
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+      </select>
+      <button id="add-task" type="button">Add task</button>
+    </form>
+    <div>
+      <label for="filter-category">Filter by category:</label>
+      <select id="filter-category" name="filter-category">
+        <option value="all">All</option>
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+      </select>
+    </div>
+    <div>
+      <label for="sort-by">Sort by:</label>
+      <select id="sort-by" name="sort-by">
+        <option value="default">Default</option>
+        <option value="text">Text</option>
+        <option value="category">Category</option>
+        <option value="date">Date created</option>
+      </select>
+      <input type="checkbox" id="sort-order" name="sort-order">
+      <label for="sort-order">Descending order</label>
+    </div>
+    <ul id="task-list"></ul>
+    <script src="app.js"></script>
+  </body>
+</html>
