@@ -26,7 +26,13 @@
         <div class="container flex-lg-column">
             <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
                 <span class="h3 fw-bold d-block d-lg-none">Pralin Khaira.</span>
-                <img src="./assets/images/person.png" class="d-none d-lg-block rounded-circle" alt="">
+                <div class="slideshow-container">
+                    <img src="./assets/images/person.png" class="slide-image d-none d-lg-block rounded-circle" alt="">
+                    <img src="./assets/images/person2.png" class="slide-image d-none d-lg-block rounded-circle" alt="">
+                    <img src="./assets/images/person3.png" class="slide-image d-none d-lg-block rounded-circle" alt="">
+                    <img src="./assets/images/person4.png" class="slide-image d-none d-lg-block rounded-circle" alt="">
+                    <img src="./assets/images/person5.png" class="slide-image d-none d-lg-block rounded-circle" alt="">
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,20 +77,34 @@
                         <div class="wrapper">
                             <div class="static-txt">I'm a</div>
                             <ul class="dynamic-txts">
-                                <li><span>Web Developer.</span></li>
-                                <li><span>Ethical Hacker.</span></li>
-                                <li><span>Programmer.</span></li>
-                                <li><span>Gamer.</span></li>
+                                <li><span>Developer</span></li>
+                                <li><span>Gamer</span></li>
+                                <li><span>Ethical Hacker</span></li>
+                                <li><span>Designer</span></li>
+                                <li><span>Problem Solver</span></li>
+                                <li><span>Tech Enthusiast</span></li>
+                                <li><span>Code Artist</span></li>
+                                <li><span>Team Player</span></li>
                             </ul>
                         </div>
                         <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">I'm a versatile web designer, ethical hacker, and freelancer with strong skills in HTML, CSS, JavaScript, Python, C, and C++. I'm passionate about creating visually stunning websites with seamless functionality and have honed my craft on platforms like Freelancer.com. Additionally, I bring creativity and expertise to video editing, enhancing footage and adding captivating effects. I thrive in collaborative environments, am always eager to expand my knowledge, and am ready to bring your ideas to life online. Let's create something remarkable together.</p>
                         <div data-aos="fade-up" data-aos-delay="600" class="text-">
-                            <a href="#work" class="btn btn-brand me-3 mb-2">Explore My Work</a>
-                            <a href="https://bit.ly/49KfPDB" class="btn btn-brand me-3 mb-2" target="_blank">View Resume</a>
-                            <div class="d-block d-md-inline">
-                                <a href="mailto:pralin.khaira.1903@gmail.com" class="link-custom">Mail Me <3</a>&emsp;
-                                <a href="tel: +917780831020" class="link-custom">Call Me :)</a>
-                            </div>
+                            <a href="#work" class="btn btn-brand me-3 mb-2 btn-hover-slide">
+                                <span class="btn-text">Explore My Work</span>
+                                <span class="btn-icon">🚀</span>
+                            </a>
+                            <a href="https://bit.ly/49KfPDB" class="btn btn-brand me-3 mb-2 btn-hover-slide" target="_blank">
+                                <span class="btn-text">View Resume</span>
+                                <span class="btn-icon">📄</span>
+                            </a>
+                            <a href="mailto:pralin.khaira.1903@gmail.com" class="btn btn-brand me-3 mb-2 btn-hover-slide">
+                                <span class="btn-text">Email Me</span>
+                                <span class="btn-icon">✉️</span>
+                            </a>
+                            <a href="tel: +917780831020" class="btn btn-brand me-3 mb-2 btn-hover-slide">
+                                <span class="btn-text">Call Me</span>
+                                <span class="btn-icon">📞</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -474,7 +494,7 @@
                         <div class="service p-4 bg-base rounded-4 shadow-effect">
                             <img class="rounded-4" src="./assets/projects/hangman.gif" alt="">
                             <h5 class="mt-4 mb-2">Hangman Game using Python</h5>
-                            <p>The goal of a Hangman Game in Python is to guess the name of the movie by guessing the letters (A-Z), when the number of wrong guesses is over, a hanged man is shown and that’s where the game ends.</p>
+                            <p>The goal of a Hangman Game in Python is to guess the name of the movie by guessing the letters (A-Z), when the number of wrong guesses is over, a hanged man is shown and that's where the game ends.</p>
                             <a href="https://beyondcoding-19.blogspot.com/2022/05/hangman-game-using-python-beyond-coding.html" class="link-custom" target="_blank">Read Blog</a>
                         </div>
                     </div>
@@ -805,9 +825,9 @@
                             <a href="mailto: pralin.khaira.1903@gmail.com"><i class="las la-envelope"></i></i></a>
                             <a href="https://github.com/pralinkhaira" target=”_blank”><i class="lab la-github"></i></a>
                             <a href="https://www.facebook.com/pralin.khaira.5/" target=”_blank”><i class="lab la-facebook"></i></a>
-                            <a href="https://www.instagram.com/_khaira.pralin_/" target=”_blank”><i class="lab la-instagram"></i></a>
+                            <a href="https://www.instagram.com/tbh.yoursss/" target=”_blank”><i class="lab la-instagram"></i></a>
                             <a href="https://www.snapchat.com/add/pralin_khaira19?share_id=ODkAPYEiu7I&locale=en-IN" target=”_blank”><i class="lab la-snapchat"></i></a>
-                            <a href="https://discordapp.com/users/xenomorphing1903" target=”_blank”><i class="lab la-discord"></i></a>
+                            <a href="https://discordapp.com/users/crackhead.hacker" target=”_blank”><i class="lab la-discord"></i></a>
                         </div>
                     </div>
                 </div>
@@ -880,6 +900,27 @@
                 successToast.show();
             }
         }
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.slide-image');
+        let currentImageIndex = 0;
+        
+        // Show first image immediately
+        images[0].classList.add('active');
+        
+        // Change image every 5 seconds
+        setInterval(function() {
+            // Hide current image
+            images[currentImageIndex].classList.remove('active');
+            
+            // Move to next image
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            
+            // Show new image
+            images[currentImageIndex].classList.add('active');
+        }, 2000); // 5000ms = 5 seconds
+    });
     </script>
 </body>
 </html>
