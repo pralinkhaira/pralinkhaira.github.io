@@ -284,11 +284,11 @@ body{
   font-weight: 500;
   position: relative;
   top: 0;
-  animation: slide 12s steps(4) infinite;
+  animation: slide 24s steps(8) infinite;
 }
 @keyframes slide {
   100%{
-    top: -360px;
+    top: -720px;
   }
 }
 .dynamic-txts li span{
@@ -313,4 +313,128 @@ body{
   100%{
     left: 0;
   }
+}
+
+/* Creative Button Styles */
+.btn-hover-slide {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 12px 24px;
+}
+
+.btn-hover-slide .btn-text {
+    display: inline-block;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.btn-hover-slide .btn-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 1.5em;
+}
+
+.btn-hover-slide:hover .btn-text {
+    opacity: 0;
+}
+
+.btn-hover-slide:hover .btn-icon {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.btn-hover-slide:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Add a subtle pulse animation on hover */
+@keyframes buttonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-hover-slide:hover {
+    animation: buttonPulse 1.5s infinite;
+    background-color: var(--color-brand2); /* Using the brand2 color for hover state */
+}
+
+/* Removed the different colors for individual buttons */
+
+/* Slideshow styles */
+.slideshow-container {
+    position: relative;
+    width: 180px;  /* Increased size */
+    height: 180px; /* Increased size */
+    margin: 0 auto;
+}
+
+.slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border: 8px solid var(--color-brand); /* Adding back the border */
+}
+
+.slide-image.active {
+    opacity: 1;
+}
+
+/* For larger screens */
+@media (min-width: 992px) {
+    .slideshow-container {
+        width: 200px;  /* Even larger for desktop */
+        height: 200px;
+    }
+}
+
+/* Card height fixes */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-custom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-custom-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* For education and experience cards */
+.bg-base {
+    height: 100%;
+}
+
+/* For project cards specifically */
+.col-md-4 {
+    display: flex;
+}
+
+/* Ensure consistent image heights */
+.card-custom-image {
+    height: 200px; /* Adjust this value as needed */
+    overflow: hidden;
+}
+
+.card-custom-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
