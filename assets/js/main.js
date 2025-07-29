@@ -87,3 +87,64 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Theme Toggle Functionality
+document.addEventListener("DOMContentLoaded", function() {
+    const themeToggle = document.getElementById("themeToggle");
+    const themeToggleMobile = document.getElementById("themeToggleMobile");
+    
+    // Check for saved theme preference or default to light theme
+    const currentTheme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    updateThemeIcons(currentTheme);
+    
+    // Toggle theme on desktop button click
+    if (themeToggle) {
+        themeToggle.addEventListener("click", function() {
+            toggleTheme();
+        });
+    }
+    
+    // Toggle theme on mobile button click
+    if (themeToggleMobile) {
+        themeToggleMobile.addEventListener("click", function() {
+            toggleTheme();
+        });
+    }
+    
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateThemeIcons(newTheme);
+        
+        // Update navbar background with smooth transition
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            navbar.style.transition = 'background 0.3s ease';
+        }
+    }
+    
+    function updateThemeIcons(theme) {
+        const icons = document.querySelectorAll('#themeToggle i, #themeToggleMobile i');
+        icons.forEach(icon => {
+            if (theme === "dark") {
+                icon.className = "las la-moon";
+            } else {
+                icon.className = "las la-sun";
+            }
+        });
+        
+        // Update tooltips
+        const buttons = document.querySelectorAll('#themeToggle, #themeToggleMobile');
+        buttons.forEach(button => {
+            if (theme === "dark") {
+                button.title = "Switch to Light Mode";
+            } else {
+                button.title = "Switch to Dark Mode";
+            }
+        });
+    }
+});

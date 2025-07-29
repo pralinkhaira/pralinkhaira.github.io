@@ -1,23 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Mooli:wght@400;500;600;700&display=swap');
 
 :root {
+    /* Light theme (default) */
+    --color-body: #333333;
+    --color-heading: #1a1a1a;
+    --color-base: #ffffff;
+    --color-base2: #f8f9fa;
+    --color-brand: #00bfff;
+    --color-brand2: #1e90ff;
+    --sidbar-width: 240px;
+    --font-base: "Mooli", sans-serif;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-bg: #ffffff;
+    --navbar-bg: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --body-bg: #f8f9fa;
+    --navbar-bg-image: url(../images/nb-d.png);
+    --hamburger-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-theme="dark"] {
+    /* Dark theme */
     --color-body: #f0f0f0;
     --color-heading: #ffffff;
     --color-base: #1a1a1a;
     --color-base2: #000;
     --color-brand: #00bfff;
     --color-brand2: #1e90ff;
-    --sidbar-width: 240px;
-    --font-base: "Mooli", sans-serif;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-bg: #1a1a1a;
+    --navbar-bg: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --body-bg: #000;
+    --navbar-bg-image: url(../images/nb-n.png);
+    --hamburger-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 body {
-    background-color: var(--color-base2);
+    background-color: var(--body-bg);
     color: var(--color-body);
     font-family: var(--font-base);
+    transition: all 0.3s ease;
 }
 
-h1, h2, h3, h4, h5, h6, {
+h1, h2, h3, h4, h5, h6 {
     color: var(--color-heading);
     font-weight: 700;
 }
@@ -52,7 +82,7 @@ img {
     justify-content: center;
     padding-top: 80px;
     padding-bottom: 80px;
-    border-bottom: 2px solid rgba(255,255,255, 0.1);
+    border-bottom: 2px solid var(--border-color);
 }
 
 .shadow-effect {
@@ -76,8 +106,9 @@ img {
 
 /* Navbar */
 .navbar {
-    background-color: var(--color-base);
+    background-color: var(--navbar-bg);
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 /* Navbar toggler positioning */
@@ -86,6 +117,13 @@ img {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
+    border: none;
+    padding: 4px;
+}
+
+/* Hamburger menu icon color for visibility */
+.navbar-toggler-icon {
+    background-image: var(--hamburger-icon);
 }
 
 /* Fix for mobile navbar when expanded */
@@ -96,17 +134,30 @@ img {
         left: 0;
         right: 0;
         height: 60px;
-        background-color: var(--color-base);
+        background-color: var(--navbar-bg);
     }
 
     /* Make navbar background solid when expanded */
     .navbar-collapse {
-        background-color: var(--color-base);
+        background-color: var(--navbar-bg);
         position: absolute;
         top: 60px;  /* Height of navbar */
         left: 0;
         right: 0;
         padding: 1rem;
+    }
+    
+    /* Mobile navbar text color for visibility */
+    .navbar .nav-link {
+        color: var(--text-primary) !important;
+    }
+    
+    .navbar .nav-link:hover {
+        color: var(--color-brand) !important;
+    }
+    
+    .navbar .nav-link.active {
+        color: var(--color-brand) !important;
     }
 
     /* Brand name container */
@@ -137,7 +188,7 @@ img {
 .navbar .nav-link {
     font-weight: 700;
     text-transform: uppercase;
-    color: #fff;
+    color: #ffffff;
 }
 
 .navbar .nav-link:hover {
@@ -145,7 +196,7 @@ img {
 }
 
 .navbar .nav-link.active {
-    color: var(--color-brand);
+    color: #ffffff;
 }
 
 /* Content wrapper adjustments */
@@ -332,7 +383,7 @@ img {
     cursor: pointer;
 }
 
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -343,14 +394,14 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #000000;
+  background: var(--body-bg);
 }
 .wrapper{
   display: flex;
   align-items: center;
 }
 .wrapper .static-txt{
-  color: #fff;
+  color: var(--text-primary);
   font-size: 60px;
   font-weight: 400;
   white-space: nowrap;
@@ -386,7 +437,7 @@ body{
   left: 0;
   height: 120%;
   width: 100%;
-  background: #000000;
+  background: var(--body-bg);
   border-left: 2px solid var(--color-brand);
   animation: typing 3s steps(10) infinite;
 }
@@ -584,9 +635,10 @@ body{
     .navbar {
         min-height: 100vh;
         width: var(--sidbar-width);
-        background: linear-gradient(rgba(3, 14, 16, 0.8), rgba(3, 14, 16, 0.8)), url(../images/sidebar.jpg);
+        background: linear-gradient(rgba(3, 14, 16, 0.8), rgba(3, 14, 16, 0.8)), var(--navbar-bg-image);
         background-size: cover;
         background-position: center;
+        transition: all 0.3s ease;
     }
 }
 
@@ -805,4 +857,111 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: var(--color-brand);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle i {
+    font-size: 20px;
+    color: var(--color-base);
+    transition: all 0.3s ease;
+}
+
+/* Desktop navbar theme toggle positioning */
+@media (min-width: 992px) {
+    .theme-toggle {
+        position: static;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .theme-toggle i {
+        font-size: 18px;
+    }
+}
+
+/* Update existing elements for theme compatibility */
+.bg-base {
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+.card-custom {
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+.full-height {
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Ensure text visibility in both themes */
+p, .lead {
+    color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+}
+
+.text-brand {
+    color: var(--color-brand) !important;
+}
+
+/* Form controls for theme compatibility */
+#contact .form-control {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+#contact .form-control:focus {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 0.2rem rgba(0, 191, 255, 0.25);
+}
+
+#contact .form-control::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Toast styling for theme compatibility */
+.toast {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.toast-header {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
 }
