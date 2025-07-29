@@ -250,6 +250,7 @@ img {
 .btn {
     padding: 12px 28px;
     font-weight: 700;
+    font-family: var(--font-base);
 }
 
 .btn-brand {
@@ -387,7 +388,7 @@ img {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-base);
 }
 body{
   display: flex;
@@ -940,6 +941,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    font-family: var(--font-base);
 }
 
 #contact .form-control:focus {
