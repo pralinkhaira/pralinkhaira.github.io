@@ -523,32 +523,56 @@ body{
   font-weight: 500;
   position: relative;
   top: 0;
-  animation: slide 24s linear infinite;
-  animation-duration: 24s; /* 8 items × 3 seconds each = 24 seconds total */
+  animation: slide 16s ease-in-out infinite;
+  animation-duration: 16s; /* 8 items × 2 seconds each = 16 seconds total */
 }
 @keyframes slide {
   0% {
     top: 0;
   }
+  12% {
+    top: 0;
+  }
   12.5% {
+    top: -90px;
+  }
+  24% {
     top: -90px;
   }
   25% {
     top: -180px;
   }
+  36% {
+    top: -180px;
+  }
   37.5% {
+    top: -270px;
+  }
+  48% {
     top: -270px;
   }
   50% {
     top: -360px;
   }
+  60% {
+    top: -360px;
+  }
   62.5% {
+    top: -450px;
+  }
+  72% {
     top: -450px;
   }
   75% {
     top: -540px;
   }
+  84% {
+    top: -540px;
+  }
   87.5% {
+    top: -630px;
+  }
+  96% {
     top: -630px;
   }
   100% {
