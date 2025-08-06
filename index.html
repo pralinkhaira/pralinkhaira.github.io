@@ -51,6 +51,9 @@
                         <a class="nav-link" href="#about">About Me</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#blogs">My Blogs</a>
                     </li>
                     <li class="nav-item">
@@ -140,11 +143,21 @@
                         <h6 class="text-brand">WORK</h6>
                         <h1>My Recent Projects!</h1>
                     </div>
+                    <div class="col-12 mb-3">
+                        <div id="project-filters" class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
+                            <button type="button" class="btn btn-outline-primary" data-filter="web">Web</button>
+                            <button type="button" class="btn btn-outline-primary" data-filter="python">Python</button>
+                            <button type="button" class="btn btn-outline-primary" data-filter="games">Games</button>
+                            <button type="button" class="btn btn-outline-primary" data-filter="api">API</button>
+                            <button type="button" class="btn btn-outline-primary" data-filter="bash">Bash</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row gy-4">
 
-                    <div class="col-md-4" data-aos="fade-up">
+                    <div class="col-md-4" data-aos="fade-up" data-category="bash web">
                         <div class="card-custom rounded-4 bg-base shadow-effect">
                             <div class="card-custom-image rounded-4">
                                 <img class="rounded-4" src="./assets/images/Insta-Cypher.png" alt="">
@@ -158,7 +171,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up">
+                    <div class="col-md-4" data-aos="fade-up" data-category="games web javascript">
                         <div class="card-custom rounded-4 bg-base shadow-effect">
                             <div class="card-custom-image rounded-4">
                                 <img class="rounded-4" src="./assets/images/mem-game.png" alt="">
@@ -172,7 +185,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up">
+                    <div class="col-md-4" data-aos="fade-up" data-category="web javascript">
                         <div class="card-custom rounded-4 bg-base shadow-effect">
                             <div class="card-custom-image rounded-4">
                                 <img class="rounded-4" src="./assets/images/Task-Manager.png" alt="">
@@ -187,7 +200,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up">
+                    <div class="col-md-4" data-aos="fade-up" data-category="web javascript">
                         <div class="card-custom rounded-4 bg-base shadow-effect">
                             <div class="card-custom-image rounded-4">
                                 <img class="rounded-4" src="./assets/images/Random-Quote-Machine.png" alt="">
@@ -201,7 +214,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up">
+                    <div class="col-md-4" data-aos="fade-up" data-category="api python flask">
                         <div class="card-custom rounded-4 bg-base shadow-effect">
                             <div class="card-custom-image rounded-4">
                                 <img class="rounded-4" src="./assets/images/Authentication-and-Authorization-API.png" alt="">
@@ -214,7 +227,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up">
+                    <div class="col-md-4" data-aos="fade-up" data-category="api python">
                         <div class="card-custom rounded-4 bg-base shadow-effect">
                             <div class="card-custom-image rounded-4">
                                 <img class="rounded-4" src="./assets/images/Facial-Recognition-API.png" alt="">
@@ -227,7 +240,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up">
+                    <div class="col-md-4" data-aos="fade-up" data-category="python">
                         <div class="card-custom rounded-4 bg-base shadow-effect">
                             <div class="card-custom-image rounded-4">
                                 <img class="rounded-4" src="./assets/images/Code-Snippet-Manager.png" alt="">
@@ -240,7 +253,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up">
+                    <div class="col-md-4" data-aos="fade-up" data-category="bash">
                         <div class="card-custom rounded-4 bg-base shadow-effect">
                             <div class="card-custom-image rounded-4">
                                 <img class="rounded-4" src="./assets/images/bro-rar-ser.png" alt="">
@@ -253,7 +266,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up">
+                    <div class="col-md-4" data-aos="fade-up" data-category="python ai">
                         <div class="card-custom rounded-4 bg-base shadow-effect">
                             <div class="card-custom-image rounded-4">
                                 <img class="rounded-4" src="./assets/images/AI-Driven-Code-Formatter.png" alt="">
@@ -458,6 +471,94 @@
             </div>
         </section>        
         <!-- //ABOUT -->
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="full-height px-lg-5">
+            <div class="container">
+                <div class="row pb-4" data-aos="fade-up">
+                    <div class="col-lg-8">
+                        <h6 class="text-brand">SKILLS</h6>
+                        <h1>My Technical Proficiency</h1>
+                    </div>
+                </div>
+                <div class="row gy-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card skill-card shadow-effect h-100">
+                            <div class="card-body text-center">
+                                <div class="skill-icon mb-3"><i class="las la-code"></i></div>
+                                <h5 class="card-title mb-2">Programming</h5>
+                                <p class="card-text">C++, Python, Java, SQL, Spring boot</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card skill-card shadow-effect h-100">
+                            <div class="card-body text-center">
+                                <div class="skill-icon mb-3"><i class="las la-shield-alt"></i></div>
+                                <h5 class="card-title mb-2">Cybersecurity</h5>
+                                <p class="card-text">Ethical Hacking, Penetration Testing, Kali Linux, Burp Suite, Nmap, John The Ripper, OSINT</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card skill-card shadow-effect h-100">
+                            <div class="card-body text-center">
+                                <div class="skill-icon mb-3"><i class="las la-globe"></i></div>
+                                <h5 class="card-title mb-2">Web Skills</h5>
+                                <p class="card-text">NodeJS, ReactJS, HTML, CSS, Javascript, MongoDB, Streamlit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card skill-card shadow-effect h-100">
+                            <div class="card-body text-center">
+                                <div class="skill-icon mb-3"><i class="las la-tools"></i></div>
+                                <h5 class="card-title mb-2">Tools & OS</h5>
+                                <p class="card-text">Git, Github, Jupyter Notebook, Google Colab, Power BI</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card skill-card shadow-effect h-100">
+                            <div class="card-body text-center">
+                                <div class="skill-icon mb-3"><i class="las la-cubes"></i></div>
+                                <h5 class="card-title mb-2">Libraries/Frameworks</h5>
+                                <p class="card-text">Pandas, Numpy, scikit-learn, Tensorflow, Pytorch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+.skill-card {
+    border: 2px solid var(--color-brand);
+    border-radius: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: var(--color-base2, #f8f9fa);
+    color: var(--color-body, #333); /* Ensure text is readable */
+}
+.skill-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0, 191, 255, 0.15);
+    border-color: var(--color-brand2);
+}
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--color-brand);
+}
+.skill-card .card-title, .skill-card .card-text {
+    color: var(--color-body, #333) !important;
+}
+[data-theme="dark"] .skill-card {
+    background: #23272b;
+    color: #fff;
+}
+[data-theme="dark"] .skill-card .card-title, [data-theme="dark"] .skill-card .card-text {
+    color: #fff !important;
+}
+</style>
+        <!-- //SKILLS SECTION -->
 
         <!-- BLOGS -->
         <section id="blogs" class="full-height px-lg-5">
@@ -865,49 +966,57 @@
     <script src="./assets/js/aos.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
+    <!-- Add EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyBtXRWVA6N859-F9kaGKsArbG0liKBgfKo",
-            authDomain: "portfolio-5c6e1.firebaseapp.com",
-            databaseURL: "https://portfolio-5c6e1-default-rtdb.firebaseio.com/",
-            projectId: "portfolio-5c6e1",
-            storageBucket: "portfolio-5c6e1.appspot.com",
-            messagingSenderId: "123961081138",
-            appId: "1:123961081138:web:67c9b9978ffa94a3feab2b"
-        };
+        // Initialize EmailJS
+        (function(){
+            emailjs.init('fq5lMDraFRHP_Mhvc');
+        })();
 
-        firebase.initializeApp(firebaseConfig);
-        const database = firebase.database();
-        const ref = database.ref("messages");
+        function showToast(message, isSuccess = true) {
+            const toast = document.getElementById('success-toast');
+            toast.querySelector('.toast-header strong').textContent = isSuccess ? 'Success' : 'Error';
+            toast.querySelector('.toast-body').textContent = message;
+            toast.style.backgroundColor = isSuccess ? '#ffcc00' : '#dc3545';
+            toast.style.color = isSuccess ? '#000' : '#fff';
+            new bootstrap.Toast(toast, { animation: true, autohide: true, delay: 3000 }).show();
+        }
+
+        function validateEmail(email) {
+            return /^\S+@\S+\.\S+$/.test(email);
+        }
 
         function Submit(e) {
             e.preventDefault();
-            const name = e.target[0].value;
-            const email = e.target[1].value;
-            const subject = e.target[2].value;
-            const message = e.target[3].value;
+            const name = e.target[0].value.trim();
+            const email = e.target[1].value.trim();
+            const subject = e.target[2].value.trim();
+            const message = e.target[3].value.trim();
 
-            if (name && email && subject && message) {
-                ref.push({
-                    name: name,
-                    email: email,
-                    subject: subject,
-                    message: message
-                });
-
-                e.target.reset();
-
-                const successToast = new bootstrap.Toast(document.getElementById('success-toast'), {
-                    animation: true,
-                    autohide: true,
-                    delay: 3000,
-                    className: 'toast-custom'
-                });
-
-                successToast.show();
+            // Validation
+            if (!name || !email || !subject || !message) {
+                showToast('Please fill in all fields.', false);
+                return;
             }
+            if (!validateEmail(email)) {
+                showToast('Please enter a valid email address.', false);
+                return;
+            }
+
+            // Send with EmailJS
+            emailjs.send('service_q4a91tt', 'template_ojloafw', {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message
+            })
+            .then(function(response) {
+                e.target.reset();
+                showToast('Your message was sent successfully!');
+            }, function(error) {
+                showToast('Failed to send message. Please try again later.', false);
+            });
         }
     </script>
     <script>
@@ -931,5 +1040,67 @@
         }, 2000); // 5000ms = 5 seconds
     });
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('#project-filters button');
+    const projects = document.querySelectorAll('.row.gy-4 > .col-md-4');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.getAttribute('data-filter');
+            projects.forEach(card => {
+                const categories = card.getAttribute('data-category') || '';
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            if (window.AOS) {
+                setTimeout(() => { AOS.refresh(); }, 100);
+            }
+        });
+    });
+});
+</script>
+<!-- Back to Top Button -->
+<button id="backToTop" title="Back to top" style="display:none;position:fixed;top:40px;right:40px;bottom:auto;z-index:9999;width:48px;height:48px;border:none;border-radius:50%;background:var(--color-brand);color:#fff;font-size:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);transition:opacity 0.3s;cursor:pointer;">
+    <i class="las la-arrow-up"></i>
+</button>
+
+<script>
+// Back to Top Button Logic
+const backToTopBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+        backToTopBtn.style.opacity = '1';
+    } else {
+        backToTopBtn.style.opacity = '0';
+        setTimeout(() => { backToTopBtn.style.display = 'none'; }, 300);
+    }
+});
+backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+<script>
+// Animate progress bars when skills section is in view
+function animateSkills() {
+    const skillsSection = document.getElementById('skills');
+    const bars = skillsSection.querySelectorAll('.progress-bar');
+    if (skillsSection.getBoundingClientRect().top < window.innerHeight - 100) {
+        bars.forEach(bar => {
+            const value = bar.getAttribute('data-progress');
+            bar.style.width = value + '%';
+        });
+        window.removeEventListener('scroll', animateSkills);
+    }
+}
+window.addEventListener('scroll', animateSkills);
+// Also trigger on load in case already in view
+animateSkills();
+</script>
 </body>
 </html>
