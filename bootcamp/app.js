@@ -323,6 +323,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.presentationApp.goToSlide = function(slideNumber) {
         originalGoToSlide(slideNumber);
         PresentationUtils.updateProgress(this.currentSlide, this.totalSlides, progressBar);
+        // Sync mobile slider
+        const mobileSlider = document.getElementById('mobileSlider');
+        const mobileSliderCurrent = document.getElementById('mobileSliderCurrent');
+        if (mobileSlider) {
+            mobileSlider.value = this.currentSlide;
+            if (mobileSliderCurrent) mobileSliderCurrent.textContent = this.currentSlide;
+        }
     };
     KeyboardShortcuts.init(window.presentationApp);
     PresentationUtils.addFullscreenSupport();
@@ -332,6 +339,22 @@ document.addEventListener('DOMContentLoaded', () => {
         window.presentationApp.totalSlides, 
         progressBar
     );
+    // --- Mobile slider logic ---
+    const mobileSlider = document.getElementById('mobileSlider');
+    const mobileSliderCurrent = document.getElementById('mobileSliderCurrent');
+    const mobileSliderTotal = document.getElementById('mobileSliderTotal');
+    if (mobileSlider && window.presentationApp) {
+        mobileSlider.value = window.presentationApp.currentSlide;
+        if (mobileSliderCurrent) mobileSliderCurrent.textContent = window.presentationApp.currentSlide;
+        if (mobileSliderTotal) mobileSliderTotal.textContent = window.presentationApp.totalSlides;
+        mobileSlider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value, 10);
+            if (!isNaN(val)) {
+                window.presentationApp.goToSlide(val);
+            }
+        });
+    }
+    // --- End mobile slider logic ---
     console.log('🛡️ Cybersecurity Presentation Ready!');
     console.log('📊 Total slides:', window.presentationApp.totalSlides);
     console.log('🎯 Press ? for keyboard shortcuts');
