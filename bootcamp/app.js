@@ -1,4 +1,3 @@
-// Cybersecurity Presentation App
 class PresentationApp {
     constructor() {
         this.currentSlide = 1;
@@ -13,28 +12,19 @@ class PresentationApp {
     }
     
     init() {
-        // Initialize event listeners
         this.prevBtn.addEventListener('click', () => this.previousSlide());
         this.nextBtn.addEventListener('click', () => this.nextSlide());
         this.homeBtn.addEventListener('click', () => this.goHome());
-        
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeydown(e));
-        
-        // Initialize display
         this.updateDisplay();
         this.updateButtons();
-        
-        // Add click handlers for slides (click to advance)
         this.slides.forEach(slide => {
             slide.addEventListener('click', (e) => {
-                // Only advance if clicking on the slide content, not navigation
                 if (!e.target.closest('.nav-controls')) {
                     this.nextSlide();
                 }
             });
         });
-        
         console.log('Cybersecurity Presentation App initialized');
     }
     
@@ -65,45 +55,56 @@ class PresentationApp {
     
     nextSlide() {
         if (this.currentSlide < this.totalSlides) {
-            this.goToSlide(this.currentSlide + 1);
+            this.goToSlide(this.currentSlide + 1, 'next');
         }
     }
     
     previousSlide() {
         if (this.currentSlide > 1) {
-            this.goToSlide(this.currentSlide - 1);
+            this.goToSlide(this.currentSlide - 1, 'prev');
         }
     }
     
     goHome() {
-        this.goToSlide(1);
+        this.goToSlide(1, 'home');
     }
     
-    goToSlide(slideNumber) {
+    goToSlide(slideNumber, direction = 'next') {
         if (slideNumber >= 1 && slideNumber <= this.totalSlides) {
-            // Hide current slide
             const currentSlideElement = document.querySelector(`[data-slide="${this.currentSlide}"]`);
-            if (currentSlideElement) {
-                currentSlideElement.classList.remove('active');
-            }
-            
-            // Update current slide number
-            this.currentSlide = slideNumber;
-            
-            // Show new slide
-            const newSlideElement = document.querySelector(`[data-slide="${this.currentSlide}"]`);
-            if (newSlideElement) {
+            const newSlideElement = document.querySelector(`[data-slide="${slideNumber}"]`);
+            if (currentSlideElement && newSlideElement && currentSlideElement !== newSlideElement) {
+                currentSlideElement.classList.remove('slide-in-left', 'slide-in-right', 'slide-out-left', 'slide-out-right', 'active');
+                newSlideElement.classList.remove('slide-in-left', 'slide-in-right', 'slide-out-left', 'slide-out-right', 'active');
+                if (direction === 'next') {
+                    currentSlideElement.classList.add('slide-out-left');
+                    newSlideElement.classList.add('slide-in-right');
+                } else if (direction === 'prev') {
+                    currentSlideElement.classList.add('slide-out-right');
+                    newSlideElement.classList.add('slide-in-left');
+                } else {
+                    currentSlideElement.classList.add('slide-out-left');
+                    newSlideElement.classList.add('slide-in-right');
+                }
+                setTimeout(() => {
+                    currentSlideElement.classList.remove('slide-out-left', 'slide-out-right', 'active');
+                    newSlideElement.classList.remove('slide-in-left', 'slide-in-right');
+                    newSlideElement.classList.add('active');
+                    this.currentSlide = slideNumber;
+                    this.updateDisplay();
+                    this.updateButtons();
+                    this.addSlideTransitionEffect();
+                    console.log(`Navigated to slide ${this.currentSlide}`);
+                }, 350);
+            } else if (newSlideElement) {
+                if (currentSlideElement) currentSlideElement.classList.remove('active');
+                this.currentSlide = slideNumber;
                 newSlideElement.classList.add('active');
+                this.updateDisplay();
+                this.updateButtons();
+                this.addSlideTransitionEffect();
+                console.log(`Navigated to slide ${this.currentSlide}`);
             }
-            
-            // Update UI
-            this.updateDisplay();
-            this.updateButtons();
-            
-            // Add some visual feedback
-            this.addSlideTransitionEffect();
-            
-            console.log(`Navigated to slide ${this.currentSlide}`);
         }
     }
     
@@ -114,29 +115,17 @@ class PresentationApp {
     }
     
     updateButtons() {
-        // Update previous button
         if (this.prevBtn) {
             this.prevBtn.disabled = this.currentSlide === 1;
         }
-        
-        // Update next button
         if (this.nextBtn) {
             this.nextBtn.disabled = this.currentSlide === this.totalSlides;
         }
     }
     
     addSlideTransitionEffect() {
-        const activeSlide = document.querySelector('.slide.active');
-        if (activeSlide) {
-            // Add a subtle scale effect
-            activeSlide.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                activeSlide.style.transform = 'scale(1)';
-            }, 100);
-        }
     }
     
-    // Utility method to get slide information
     getCurrentSlideInfo() {
         return {
             current: this.currentSlide,
@@ -154,12 +143,10 @@ class PresentationApp {
         return `Slide ${slideNumber}`;
     }
     
-    // Progress tracking
     getProgress() {
         return Math.round((this.currentSlide / this.totalSlides) * 100);
     }
     
-    // Add smooth scroll behavior for better UX
     smoothScrollToSlide(slideNumber) {
         const slide = document.querySelector(`[data-slide="${slideNumber}"]`);
         if (slide) {
@@ -171,7 +158,6 @@ class PresentationApp {
     }
 }
 
-// Additional utility functions for enhanced presentation experience
 class PresentationUtils {
     static addFullscreenSupport() {
         document.addEventListener('keydown', (e) => {
@@ -205,7 +191,6 @@ class PresentationUtils {
             z-index: 1000;
         `;
         document.body.appendChild(progressBar);
-        
         return progressBar;
     }
     
@@ -217,40 +202,29 @@ class PresentationUtils {
     }
     
     static addSlideCounter() {
-        // This functionality is already handled in the main nav controls
-        // but could be extended for additional counters if needed
         console.log('Slide counter functionality integrated in nav controls');
     }
     
     static addAutoAdvanceTimer(seconds = 30) {
         let timer;
-        
         const startTimer = () => {
             clearTimeout(timer);
             timer = setTimeout(() => {
-                // Auto advance to next slide if not on last slide
                 if (window.presentationApp && window.presentationApp.currentSlide < window.presentationApp.totalSlides) {
                     window.presentationApp.nextSlide();
-                    startTimer(); // Restart timer for next slide
+                    startTimer();
                 }
             }, seconds * 1000);
         };
-        
         const stopTimer = () => {
             clearTimeout(timer);
         };
-        
-        // Start timer initially
         startTimer();
-        
-        // Pause timer on user interaction
         document.addEventListener('click', stopTimer);
         document.addEventListener('keydown', stopTimer);
-        
         return { startTimer, stopTimer };
     }
     
-    // Presentation mode helpers
     static enterPresentationMode() {
         document.body.style.cursor = 'none';
         setTimeout(() => {
@@ -260,30 +234,23 @@ class PresentationUtils {
     
     static addMouseHideTimer() {
         let mouseTimer;
-        
         const hideMouseCursor = () => {
             document.body.style.cursor = 'none';
         };
-        
         const showMouseCursor = () => {
             document.body.style.cursor = '';
             clearTimeout(mouseTimer);
             mouseTimer = setTimeout(hideMouseCursor, 3000);
         };
-        
         document.addEventListener('mousemove', showMouseCursor);
         document.addEventListener('click', showMouseCursor);
-        
-        // Initial timer
         mouseTimer = setTimeout(hideMouseCursor, 3000);
     }
 }
 
-// Enhanced keyboard shortcuts
 class KeyboardShortcuts {
     static init(presentationApp) {
         document.addEventListener('keydown', (e) => {
-            // Presentation control shortcuts
             switch(e.key.toLowerCase()) {
                 case 'g':
                     if (e.ctrlKey) {
@@ -308,8 +275,6 @@ class KeyboardShortcuts {
                     }
                     break;
             }
-            
-            // Number keys for direct slide access (1-9)
             if (e.key >= '1' && e.key <= '9' && !e.ctrlKey && !e.altKey) {
                 e.preventDefault();
                 const slideNumber = parseInt(e.key);
@@ -351,43 +316,25 @@ class KeyboardShortcuts {
     }
 }
 
-// Initialize the presentation when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Create main presentation app instance
     window.presentationApp = new PresentationApp();
-    
-    // Add enhanced features
     const progressBar = PresentationUtils.addProgressIndicator();
-    
-    // Update progress bar when slides change
     const originalGoToSlide = window.presentationApp.goToSlide.bind(window.presentationApp);
     window.presentationApp.goToSlide = function(slideNumber) {
         originalGoToSlide(slideNumber);
         PresentationUtils.updateProgress(this.currentSlide, this.totalSlides, progressBar);
     };
-    
-    // Initialize keyboard shortcuts
     KeyboardShortcuts.init(window.presentationApp);
-    
-    // Add fullscreen support
     PresentationUtils.addFullscreenSupport();
-    
-    // Add mouse hide timer for presentation mode
     PresentationUtils.addMouseHideTimer();
-    
-    // Initial progress update
     PresentationUtils.updateProgress(
         window.presentationApp.currentSlide, 
         window.presentationApp.totalSlides, 
         progressBar
     );
-    
-    // Log ready state
     console.log('🛡️ Cybersecurity Presentation Ready!');
     console.log('📊 Total slides:', window.presentationApp.totalSlides);
     console.log('🎯 Press ? for keyboard shortcuts');
-    
-    // Optional: Add presentation start notification
     setTimeout(() => {
         console.log('🚀 Presentation: Real Tools & Hands-On Attacks');
         console.log('👨‍💻 Presenter: Pralin Khaira');
@@ -395,13 +342,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
 });
 
-// Error handling and recovery
 window.addEventListener('error', (e) => {
     console.error('Presentation Error:', e.error);
-    // Could implement error recovery logic here
 });
 
-// Handle visibility changes (tab switching)
 document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') {
         console.log('Presentation tab is now active');
@@ -410,7 +354,6 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-// Export for potential external use
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { PresentationApp, PresentationUtils, KeyboardShortcuts };
 }

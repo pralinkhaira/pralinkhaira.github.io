@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Tools & Hands-On Attacks - Cybersecurity Seminar</title>
+    <title>From Hashes to HTTP</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="presentation-container">
-        <!-- Navigation Controls -->
         <div class="nav-controls">
             <button class="nav-btn" id="homeBtn">🏠</button>
             <button class="nav-btn" id="prevBtn">◀</button>
@@ -16,42 +15,41 @@
             <button class="nav-btn" id="nextBtn">▶</button>
         </div>
 
-        <!-- Slide 1: Title -->
         <div class="slide active" data-slide="1">
             <div class="slide-content title-slide">
-                <h1>Real Tools & Hands-On Attacks</h1>
-                <h2>A Practical Cybersecurity Workshop</h2>
+                <h1>From Hashes to HTTP</h1>
+                <h2 style="color:#c0152f;">A Practical Cybersecurity Workshop</h2>
                 <div class="presenter-info">
                     <p class="presenter">Pralin Khaira</p>
-                    <p class="event-details">17th August, 2025 • 9:00 PM • 100 minutes</p>
+                    <p class="event-details" style="color:var(--color-warning);">16th August, 2025 • 9:00 PM</p>
+                    <div style="text-align:center; margin-top: 24px;">
+                        <img src="Images/logo Bsides.png" alt="BSides Logo" style="height:100px;max-width:180px;object-fit:contain;display:inline-block;">
+                    </div>
                 </div>
-                <div class="title-visual">🛡️⚔️🔐</div>
             </div>
         </div>
 
-        <!-- Slide 2: Agenda -->
         <div class="slide" data-slide="2">
             <div class="slide-content">
                 <h1>What We'll Cover Tonight</h1>
                 <div class="agenda-list">
-                    <div class="agenda-item">🎯 Quick intro to Red, Blue, Purple Teams</div>
-                    <div class="agenda-item">📊 Difference: CTFs, HTB, Bug Bounty</div>
-                    <div class="agenda-item">🛠️ Tool Demos: Burp Suite - Basic intercept and inspection</div>
-                    <div class="agenda-item">🛠️ Tool Demos: John the Ripper - Password cracking basics</div>
-                    <div class="agenda-item">🎮 We will use: Vulnerable apps like DVWA</div>
-                    <div class="agenda-item">🤝 Interactive hands-on practice</div>
+                    <div class="agenda-item">➜ Quick intro to Red, Blue, Purple Teams</div>
+                    <div class="agenda-item">➜ Difference: CTFs, HTB, Bug Bounty</div>
+                    <div class="agenda-item">➜ Tool Demos: Burp Suite - Basic intercept and inspection</div>
+                    <div class="agenda-item">➜ Tool Demos: John the Ripper - Password cracking basics</div>
+                    <div class="agenda-item">➜ We will use: Vulnerable apps like DVWA</div>
+                    <div class="agenda-item">➜ Interactive hands-on practice</div>
                 </div>
-                <p class="footer-text">Total Duration: 100 minutes of practical learning</p>
+                <p class="footer-text">Always remember "Hacking skills are like virginity - once you lose it, you can't get it back"</p>
             </div>
         </div>
 
-        <!-- Slide 3: Ethics -->
         <div class="slide" data-slide="3">
             <div class="slide-content">
-                <h1>🚨 Important Legal & Ethical Guidelines</h1>
+                <h1>Important Legal & Ethical Guidelines</h1>
                 <div class="ethics-grid">
                     <div class="ethics-section will-do">
-                        <h3>✅ What We WILL Do</h3>
+                        <h3>✅ Do's</h3>
                         <ul>
                             <li>Use isolated lab environments (DVWA)</li>
                             <li>Learn tools for defensive purposes</li>
@@ -60,7 +58,7 @@
                         </ul>
                     </div>
                     <div class="ethics-section wont-do">
-                        <h3>❌ What We WON'T Do</h3>
+                        <h3>❌ Don'ts</h3>
                         <ul>
                             <li>Test on unauthorized systems</li>
                             <li>Attack real production websites</li>
@@ -73,14 +71,13 @@
             </div>
         </div>
 
-        <!-- Slide 4: Teams Overview -->
         <div class="slide" data-slide="4">
             <div class="slide-content">
                 <h1>Cybersecurity Teams - The Battlefield</h1>
-                <h2>Red vs Blue vs Purple Teams</h2>
+                <h2>Red Teams vs Blue Teams vs Purple Teams</h2>
                 <div class="teams-grid">
                     <div class="team-card red-team">
-                        <h3>🔴 RED TEAM (Attackers)</h3>
+                        <h3>➤ RED TEAM (Attackers)</h3>
                         <ul>
                             <li>Offensive security specialists</li>
                             <li>Think like real attackers</li>
@@ -89,7 +86,7 @@
                         </ul>
                     </div>
                     <div class="team-card blue-team">
-                        <h3>🔵 BLUE TEAM (Defenders)</h3>
+                        <h3>➤ BLUE TEAM (Defenders)</h3>
                         <ul>
                             <li>Defensive security operations</li>
                             <li>Monitor networks & systems</li>
@@ -98,7 +95,7 @@
                         </ul>
                     </div>
                     <div class="team-card purple-team">
-                        <h3>🟣 PURPLE TEAM (Collaborators)</h3>
+                        <h3>➤ PURPLE TEAM (Collaborators)</h3>
                         <ul>
                             <li>Bridge between Red & Blue</li>
                             <li>Analyze attack data together</li>
@@ -110,7 +107,6 @@
             </div>
         </div>
 
-        <!-- Slide 5: Red Team Deep Dive -->
         <div class="slide" data-slide="5">
             <div class="slide-content">
                 <h1>🔴 Red Team: The Ethical Attackers</h1>
@@ -118,29 +114,29 @@
                     <div class="detail-section">
                         <h3>Responsibilities</h3>
                         <ul>
-                            <li>Simulate real-world attack scenarios</li>
-                            <li>Conduct penetration testing</li>
-                            <li>Social engineering assessments</li>
-                            <li>Physical security testing</li>
-                            <li>Report findings to improve defenses</li>
+                            <li>・Simulate real-world attack scenarios</li>
+                            <li>・Conduct penetration testing</li>
+                            <li>・Social engineering assessments</li>
+                            <li>・Physical security testing</li>
+                            <li>・Report findings to improve defenses</li>
                         </ul>
                     </div>
                     <div class="detail-section">
                         <h3>Tools</h3>
                         <ul>
-                            <li>Burp Suite, Metasploit, Nmap</li>
-                            <li>Custom exploit development</li>
-                            <li>Social engineering frameworks</li>
-                            <li>Physical bypass tools</li>
+                            <li>・Burp Suite, Metasploit, Nmap</li>
+                            <li>・Custom exploit development</li>
+                            <li>・Social engineering frameworks</li>
+                            <li>・Physical bypass tools</li>
                         </ul>
                     </div>
                     <div class="detail-section">
                         <h3>Career Paths</h3>
                         <ul>
-                            <li>Penetration Tester</li>
-                            <li>Security Consultant</li>
-                            <li>Bug Bounty Hunter</li>
-                            <li>Red Team Operator</li>
+                            <li>・Penetration Tester</li>
+                            <li>・Security Consultant</li>
+                            <li>・Bug Bounty Hunter</li>
+                            <li>・Red Team Operator</li>
                         </ul>
                     </div>
                 </div>
@@ -148,7 +144,6 @@
             </div>
         </div>
 
-        <!-- Slide 6: Blue Team Deep Dive -->
         <div class="slide" data-slide="6">
             <div class="slide-content">
                 <h1>🔵 Blue Team: The Digital Defenders</h1>
@@ -156,30 +151,30 @@
                     <div class="detail-section">
                         <h3>Responsibilities</h3>
                         <ul>
-                            <li>24/7 security monitoring (SOC)</li>
-                            <li>Incident detection & response</li>
-                            <li>Threat hunting & analysis</li>
-                            <li>Security tool management</li>
-                            <li>Forensic investigations</li>
+                            <li>・24/7 security monitoring (SOC)</li>
+                            <li>・Incident detection & response</li>
+                            <li>・Threat hunting & analysis</li>
+                            <li>・Security tool management</li>
+                            <li>・Forensic investigations</li>
                         </ul>
                     </div>
                     <div class="detail-section">
                         <h3>Tools</h3>
                         <ul>
-                            <li>SIEM platforms (Splunk, QRadar)</li>
-                            <li>Network monitoring tools</li>
-                            <li>Endpoint detection & response</li>
-                            <li>Forensic analysis software</li>
+                            <li>・SIEM platforms (Splunk, QRadar)</li>
+                            <li>・Network monitoring tools</li>
+                            <li>・Endpoint detection & response</li>
+                            <li>・Forensic analysis software</li>
                         </ul>
                     </div>
                     <div class="detail-section">
                         <h3>Career Paths</h3>
                         <ul>
-                            <li>SOC Analyst</li>
-                            <li>Incident Responder</li>
-                            <li>Threat Hunter</li>
-                            <li>Digital Forensics Investigator</li>
-                            <li>Security Architect</li>
+                            <li>・SOC Analyst</li>
+                            <li>・Incident Responder</li>
+                            <li>・Threat Hunter</li>
+                            <li>・Digital Forensics Investigator</li>
+                            <li>・Security Architect</li>
                         </ul>
                     </div>
                 </div>
@@ -187,7 +182,6 @@
             </div>
         </div>
 
-        <!-- Slide 7: Purple Team Deep Dive -->
         <div class="slide" data-slide="7">
             <div class="slide-content">
                 <h1>🟣 Purple Team: The Bridge Builders</h1>
@@ -195,28 +189,28 @@
                     <div class="detail-section">
                         <h3>Responsibilities</h3>
                         <ul>
-                            <li>Facilitate Red/Blue collaboration</li>
-                            <li>Analyze attack simulation results</li>
-                            <li>Develop improved defense strategies</li>
-                            <li>Create threat intelligence</li>
-                            <li>Bridge communication gaps</li>
+                            <li>・Facilitate Red/Blue collaboration</li>
+                            <li>・Analyze attack simulation results</li>
+                            <li>・Develop improved defense strategies</li>
+                            <li>・Create threat intelligence</li>
+                            <li>・Bridge communication gaps</li>
                         </ul>
                     </div>
                     <div class="detail-section">
                         <h3>Why It Matters</h3>
                         <ul>
-                            <li>Combines offensive & defensive knowledge</li>
-                            <li>Reduces silos between teams</li>
-                            <li>Maximizes learning from exercises</li>
-                            <li>Improves organizational security</li>
+                            <li>・Combines offensive & defensive knowledge</li>
+                            <li>・Reduces silos between teams</li>
+                            <li>・Maximizes learning from exercises</li>
+                            <li>・Improves organizational security</li>
                         </ul>
                     </div>
                     <div class="detail-section">
                         <h3>Career Evolution</h3>
                         <ul>
-                            <li>Often senior professionals with both Red & Blue experience</li>
-                            <li>Strategic security leadership roles</li>
-                            <li>Advanced threat analysis positions</li>
+                            <li>・Often senior professionals with both Red & Blue experience</li>
+                            <li>・Strategic security leadership roles</li>
+                            <li>・Advanced threat analysis positions</li>
                         </ul>
                     </div>
                 </div>
@@ -224,8 +218,29 @@
             </div>
         </div>
 
-        <!-- Slide 8: Platform Landscape -->
         <div class="slide" data-slide="8">
+            <div class="slide-content">
+                <h1>Cybersecurity Teams Visual Overview</h1>
+                <h2>Understanding the Team Dynamics</h2>
+                <div class="image-container">
+                    <img src="Images/teams.png" alt="Cybersecurity Teams Overview" style="max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+                <p class="image-caption">Visual representation of how Red, Blue, and Purple teams interact and collaborate in cybersecurity operations.</p>
+            </div>
+        </div>
+
+        <div class="slide" data-slide="9">
+            <div class="slide-content">
+                <h1>Deep Dive: Team Interactions</h1>
+                <h2>How Teams Work Together</h2>
+                <div class="image-container">
+                    <img src="Images/teams2.png" alt="Detailed Team Analysis" style="max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+                <p class="image-caption">Detailed breakdown of team responsibilities, tools, and collaboration patterns in modern cybersecurity environments.</p>
+            </div>
+        </div>
+
+        <div class="slide" data-slide="10">
             <div class="slide-content">
                 <h1>Platform Landscape Overview</h1>
                 <h2>Where Do You Practice These Skills?</h2>
@@ -250,10 +265,9 @@
             </div>
         </div>
 
-        <!-- Slide 9: CTF Details -->
-        <div class="slide" data-slide="9">
+        <div class="slide" data-slide="11">
             <div class="slide-content">
-                <h1>🏁 CTF - Capture The Flag</h1>
+                <h1>⤷ CTF - Capture The Flag</h1>
                 <h2>Gamified Cybersecurity Learning</h2>
                 <p class="description">Cybersecurity competitions & challenges with points-based puzzle solving. Categories: Web, Crypto, Forensics, Reverse Engineering</p>
                 <div class="pros-cons">
@@ -279,10 +293,9 @@
             </div>
         </div>
 
-        <!-- Slide 10: HTB Details -->
-        <div class="slide" data-slide="10">
+        <div class="slide" data-slide="12">
             <div class="slide-content">
-                <h1>🎯 HackTheBox - Realistic Training</h1>
+                <h1>⤷ HackTheBox - Realistic Training</h1>
                 <h2>Structured Cybersecurity Learning</h2>
                 <p class="description">Vulnerable virtual machines with realistic network environments, progressive difficulty levels, and structured learning paths</p>
                 <div class="pros-cons">
@@ -308,10 +321,9 @@
             </div>
         </div>
 
-        <!-- Slide 11: Bug Bounty Details -->
-        <div class="slide" data-slide="11">
+        <div class="slide" data-slide="13">
             <div class="slide-content">
-                <h1>💰 Bug Bounty - Real World Impact</h1>
+                <h1>⤷ Bug Bounty - Real World Impact</h1>
                 <h2>Professional Vulnerability Hunting</h2>
                 <p class="description">Finding vulnerabilities in real applications, getting paid by companies for discoveries, responsible disclosure process with direct impact on real-world security</p>
                 <div class="pros-cons">
@@ -338,57 +350,64 @@
             </div>
         </div>
 
-        <!-- Slide 12: Career Journey -->
-        <div class="slide" data-slide="12">
+        <div class="slide" data-slide="14">
             <div class="slide-content">
-                <h1>🚀 Your Cybersecurity Journey</h1>
+                <h1>➛ Your Cybersecurity Journey</h1>
                 <h2>Career Progression Path</h2>
                 <div class="progression-flow">
-                    <div class="flow-step">📚 LEARNING</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">🏁 CTF</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">🎯 HTB</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">💰 Bug Bounty</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">👔 Professional Roles</div>
+                    <div class="flow-step">LEARNING</div>
+                    <div class="flow-arrow">⟼</div>
+                    <div class="flow-step">CTF</div>
+                    <div class="flow-arrow">⟼</div>
+                    <div class="flow-step">HTB</div>
+                    <div class="flow-arrow">⟼</div>
+                    <div class="flow-step">Bug Bounty</div>
+                    <div class="flow-arrow">⟼</div>
+                    <div class="flow-step">Professional Roles</div>
                 </div>
                 <div class="stages">
                     <div class="stage">
                         <h3>Beginner (0-6 months)</h3>
                         <ul>
-                            <li>Online courses & certifications</li>
-                            <li>Basic CTF challenges</li>
-                            <li>Set up home lab</li>
+                            <li>✓ Online courses & certifications</li>
+                            <li>✓ Basic CTF challenges</li>
+                            <li>✓ Set up home lab</li>
                         </ul>
                     </div>
                     <div class="stage">
                         <h3>Intermediate (6-18 months)</h3>
                         <ul>
-                            <li>Regular CTF participation</li>
-                            <li>HTB machines & learning paths</li>
-                            <li>First penetration testing attempts</li>
+                            <li>✓ Regular CTF participation</li>
+                            <li>✓ HTB machines & learning paths</li>
+                            <li>✓ First penetration testing attempts</li>
                         </ul>
                     </div>
                     <div class="stage">
                         <h3>Advanced (18+ months)</h3>
                         <ul>
-                            <li>Bug bounty participation</li>
-                            <li>Professional certifications (OSCP, CEH)</li>
-                            <li>Job applications & networking</li>
+                            <li>✓ Bug bounty participation</li>
+                            <li>✓ Professional certifications (OSCP, CEH)</li>
+                            <li>✓ Job applications & networking</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 13: Tools Introduction -->
-        <div class="slide" data-slide="13">
+        <div class="slide" data-slide="15">
             <div class="slide-content">
                 <h1>🛠️ Tonight's Arsenal</h1>
                 <h2>Tool Introduction</h2>
                 <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>DVWA</h3>
+                        <p class="tool-category">Practice Target</p>
+                        <ul>
+                            <li>Deliberately vulnerable web application</li>
+                            <li>Safe environment for learning</li>
+                            <li>Multiple difficulty levels</li>
+                        </ul>
+                    </div>
                     <div class="tool-card">
                         <h3>Burp Suite</h3>
                         <p class="tool-category">Web Application Security Testing</p>
@@ -407,54 +426,43 @@
                             <li>Multiple attack modes & hash formats</li>
                         </ul>
                     </div>
-                    <div class="tool-card">
-                        <h3>DVWA</h3>
-                        <p class="tool-category">Practice Target</p>
-                        <ul>
-                            <li>Deliberately vulnerable web application</li>
-                            <li>Safe environment for learning</li>
-                            <li>Multiple difficulty levels</li>
-                        </ul>
-                    </div>
                 </div>
                 <p class="call-to-action">Ready to see these in action?</p>
             </div>
         </div>
 
-        <!-- Slide 14: Burp Suite Overview -->
-        <div class="slide" data-slide="14">
+        <div class="slide" data-slide="16">
             <div class="slide-content">
-                <h1>🕷️ Burp Suite Overview</h1>
+                <h1>Burp Suite Overview</h1>
                 <h2>The Web Application Security Swiss Army Knife</h2>
                 <p class="description">Web vulnerability scanner & attack platform. Proxy for intercepting & modifying HTTP traffic. Used by 99% of professional web application pentesters.</p>
                 <div class="feature-sections">
                     <div class="feature-section">
                         <h3>Features</h3>
                         <ul>
-                            <li>Proxy: Intercept & modify requests/responses</li>
-                            <li>Scanner: Automated vulnerability detection</li>
-                            <li>Intruder: Automated attack tool</li>
-                            <li>Repeater: Manual request modification</li>
-                            <li>Sequencer: Token randomness analysis</li>
+                            <li>» Proxy: Intercept & modify requests/responses</li>
+                            <li>» Scanner: Automated vulnerability detection</li>
+                            <li>» Intruder: Automated attack tool</li>
+                            <li>» Repeater: Manual request modification</li>
+                            <li>» Sequencer: Token randomness analysis</li>
                         </ul>
                     </div>
                     <div class="feature-section">
                         <h3>Professional Usage</h3>
                         <ul>
-                            <li>Penetration testing engagements</li>
-                            <li>Bug bounty hunting</li>
-                            <li>Security code reviews</li>
-                            <li>Compliance assessments</li>
+                            <li>» Penetration testing engagements</li>
+                            <li>» Bug bounty hunting</li>
+                            <li>» Security code reviews</li>
+                            <li>» Compliance assessments</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 15: DVWA Overview -->
-        <div class="slide" data-slide="15">
+        <div class="slide" data-slide="17">
             <div class="slide-content">
-                <h1>🎯 DVWA - Our Training Ground</h1>
+                <h1>DVWA - Our Training Ground</h1>
                 <h2>Damn Vulnerable Web Application</h2>
                 <p class="description">Intentionally vulnerable PHP/MySQL web application. Safe, legal environment for practicing. Multiple vulnerability types & difficulty levels. Open source & widely used for training.</p>
                 <div class="dvwa-levels">
@@ -480,10 +488,9 @@
             </div>
         </div>
 
-        <!-- Slide 16: Burp Suite Demo -->
-        <div class="slide" data-slide="16">
+        <div class="slide" data-slide="18">
             <div class="slide-content">
-                <h1>🚀 LIVE DEMO TIME!</h1>
+                <h1>LIVE DEMO TIME!</h1>
                 <h2>Burp Suite + DVWA in Action</h2>
                 <div class="demo-steps">
                     <div class="step">
@@ -511,70 +518,67 @@
                         <span class="step-text">Understanding the attacker mindset</span>
                     </div>
                 </div>
-                <p class="participation">Follow along on your devices!</p>
                 <p class="warning">⚠️ Remember: Only on authorized targets like DVWA</p>
             </div>
         </div>
 
-        <!-- Slide 17: John the Ripper Overview -->
-        <div class="slide" data-slide="17">
+        <div class="slide" data-slide="19">
             <div class="slide-content">
-                <h1>🔓 John the Ripper Overview</h1>
+                <h1>John the Ripper Overview</h1>
                 <h2>Password Security Assessment Tool</h2>
                 <p class="description">Open source password cracking software. Tests password strength by attempting to crack hashes. Multiple attack modes & hash format support. Used by security professionals worldwide.</p>
                 <div class="feature-sections">
                     <div class="feature-section">
                         <h3>Attack Modes</h3>
                         <ul>
-                            <li>Single Mode: Uses username variations</li>
-                            <li>Wordlist Mode: Dictionary attacks with common passwords</li>
-                            <li>Incremental Mode: Brute force with character combinations</li>
-                            <li>Rule-based: Applies transformation rules to wordlists</li>
+                            <li>◦ Single Mode: Uses username variations</li>
+                            <li>◦ Wordlist Mode: Dictionary attacks with common passwords</li>
+                            <li>◦ Incremental Mode: Brute force with character combinations</li>
+                            <li>◦ Rule-based: Applies transformation rules to wordlists</li>
                         </ul>
                     </div>
                     <div class="feature-section">
                         <h3>Professional Applications</h3>
                         <ul>
-                            <li>Password policy compliance testing</li>
-                            <li>Incident response & forensics</li>
-                            <li>Penetration testing assessments</li>
-                            <li>Security awareness training</li>
+                            <li>◦ Password policy compliance testing</li>
+                            <li>◦ Incident response & forensics</li>
+                            <li>◦ Penetration testing assessments</li>
+                            <li>◦ Security awareness training</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 18: Password Security -->
-        <div class="slide" data-slide="18">
+        <div class="slide" data-slide="20">
             <div class="slide-content">
-                <h1>🔐 Password Security Fundamentals</h1>
+                <h1>Password Security Fundamentals</h1>
                 <h2>Why Password Cracking Matters</h2>
                 <div class="password-grid">
                     <div class="password-section">
                         <h3>The Problem</h3>
                         <ul>
-                            <li>81% of data breaches involve weak passwords</li>
-                            <li>Users reuse passwords across multiple sites</li>
-                            <li>Common passwords are easily cracked</li>
-                            <li>Default passwords often unchanged</li>
+                            <li>› 81% of data breaches involve weak passwords</li>
+                            <li>› Users reuse passwords across multiple sites</li>
+                            <li>› Common passwords are easily cracked</li>
+                            <li>› Default passwords often unchanged</li>
                         </ul>
                     </div>
                     <div class="password-section">
                         <h3>Storage Methods</h3>
                         <ul>
-                            <li>Hashed (one-way mathematical function)</li>
-                            <li>Salted (random data added to prevent rainbow table attacks)</li>
-                            <li>Different algorithms: MD5, SHA1, bcrypt, etc.</li>
+                            <li>› Hashed (one-way mathematical function)</li>
+                            <li>› Salted (random data added to prevent rainbow table attacks)</li>
+                            <li>› Different algorithms: MD5, SHA1, bcrypt, etc.</li>
                         </ul>
                     </div>
                     <div class="password-section">
                         <h3>Defense Strategies</h3>
                         <ul>
-                            <li>Complex password requirements</li>
-                            <li>Multi-factor authentication</li>
-                            <li>Regular password rotation</li>
-                            <li>Password manager usage</li>
+                            <li>› Complex password requirements</li>
+                            <li>› Multi-factor authentication</li>
+                            <li>› Regular password rotation</li>
+                            <li>› Password manager usage</li>
                         </ul>
                     </div>
                 </div>
@@ -582,10 +586,9 @@
             </div>
         </div>
 
-        <!-- Slide 19: John the Ripper Demo -->
-        <div class="slide" data-slide="19">
+        <div class="slide" data-slide="21">
             <div class="slide-content">
-                <h1>🎬 LIVE DEMO TIME!</h1>
+                <h1>LIVE DEMO TIME!</h1>
                 <h2>John the Ripper in Action</h2>
                 <div class="demo-steps">
                     <div class="step">
@@ -613,177 +616,107 @@
                         <span class="step-text">Ethical boundaries discussion</span>
                     </div>
                 </div>
-                <div class="scenarios">
-                    <h3>Sample Scenarios</h3>
-                    <p>Common passwords (password123, admin, etc.) • Dictionary words with simple modifications • Compare strong vs weak password resistance</p>
-                </div>
                 <p class="warning">⚠️ Educational purposes only - authorized testing</p>
             </div>
         </div>
 
-        <!-- Slide 20: Hands-on Practice -->
-        <div class="slide" data-slide="20">
+        <div class="slide" data-slide="22">
             <div class="slide-content">
-                <h1>🧪 Your Turn to Experiment!</h1>
+                <h1>Your Turn to Experiment!</h1>
                 <h2>Hands-On Practice Time</h2>
                 <div class="practice-grid">
                     <div class="practice-section">
                         <h3>Challenges</h3>
                         <ul>
-                            <li>DVWA SQL Injection (Low level)</li>
-                            <li>DVWA Cross-Site Scripting (XSS)</li>
-                            <li>Password cracking exercises</li>
-                            <li>Request modification experiments</li>
+                            <li>⁃ DVWA SQL Injection (Low level)</li>
+                            <li>⁃ DVWA Cross-Site Scripting (XSS)</li>
+                            <li>⁃ Password cracking exercises</li>
+                            <li>⁃ Request modification experiments</li>
                         </ul>
                     </div>
                     <div class="practice-section">
-                        <h3>Support</h3>
+                        <h3>References</h3>
                         <ul>
-                            <li>Work individually or in pairs</li>
-                            <li>Instructors available for help</li>
-                            <li>Don't be afraid to ask questions!</li>
-                            <li>Share discoveries with the group</li>
+                            <li>• YouTube: <a href="https://www.youtube.com/@LiveOverflow" target="_blank">LiveOverflow</a> (practical hacking demos)</li>
+                            <li>• YouTube: <a href="https://www.youtube.com/@TheCyberMentor" target="_blank">The Cyber Mentor</a> (beginner to advanced tutorials)</li>
+                            <li>• Article: <a href="https://portswigger.net/web-security" target="_blank">PortSwigger Web Security Academy</a></li>
+                            <li>• Article: <a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top 10</a></li>
                         </ul>
+                        <p class="note">Hands-on practice is not included tonight due to time constraints. Please explore these resources for guided labs and demonstrations.</p>
                     </div>
                 </div>
                 <div class="time-goal">
-                    <p class="time">Time: 20 minutes</p>
+                    <p class="time">Time: 1 Hour each day!</p>
                     <p class="goal">Goal: Get comfortable with the tools, not solve everything</p>
                 </div>
                 <p class="reminder">Learning process is more important than solving challenges</p>
             </div>
         </div>
 
-        <!-- Slide 21: Key Takeaways -->
-        <div class="slide" data-slide="21">
+        <div class="slide" data-slide="23">
             <div class="slide-content">
-                <h1>🎯 What You've Learned Tonight</h1>
-                <h2>Key Takeaways</h2>
-                <div class="takeaways-grid">
-                    <div class="takeaway-section">
-                        <h3>Technical Skills</h3>
-                        <ul>
-                            <li>✅ Burp Suite proxy setup & traffic interception</li>
-                            <li>✅ Basic web vulnerability identification</li>
-                            <li>✅ Password cracking fundamentals with John the Ripper</li>
-                            <li>✅ Hands-on experience with DVWA</li>
-                        </ul>
-                    </div>
-                    <div class="takeaway-section">
-                        <h3>Conceptual Understanding</h3>
-                        <ul>
-                            <li>✅ Red/Blue/Purple team roles & responsibilities</li>
-                            <li>✅ CTF vs HTB vs Bug Bounty career paths</li>
-                            <li>✅ Ethical hacking principles & legal boundaries</li>
-                            <li>✅ Professional cybersecurity tool usage</li>
-                        </ul>
-                    </div>
-                    <div class="takeaway-section">
-                        <h3>Next Steps</h3>
-                        <ul>
-                            <li>✅ Continue practicing in safe lab environments</li>
-                            <li>✅ Consider certification paths (OSCP, CEH, Security+)</li>
-                            <li>✅ Join cybersecurity communities & forums</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 22: Next Steps -->
-        <div class="slide" data-slide="22">
-            <div class="slide-content">
-                <h1>🚀 Your Cybersecurity Journey Starts Here</h1>
+                <h1>Your Cybersecurity Journey Starts Here</h1>
                 <h2>Next Steps & Resources</h2>
                 <div class="resources-grid">
                     <div class="resource-section">
                         <h3>Immediate Actions</h3>
                         <ol>
-                            <li>Set up your own DVWA lab environment</li>
-                            <li>Download Burp Suite Community Edition</li>
-                            <li>Try basic CTF challenges (PicoCTF, Over The Wire)</li>
-                            <li>Join cybersecurity Discord/Reddit communities</li>
+                            <li>◦ Set up your own DVWA lab environment</li>
+                            <li>◦ Download Burp Suite Community Edition</li>
+                            <li>◦ Try basic CTF challenges (PicoCTF, Over The Wire)</li>
+                            <li>◦ Join cybersecurity Discord/Reddit communities</li>
                         </ol>
                     </div>
                     <div class="resource-section">
                         <h3>Learning Resources</h3>
                         <ul>
-                            <li><strong>Certifications:</strong> Security+, CEH, OSCP</li>
-                            <li><strong>Platforms:</strong> TryHackMe, VulnHub, HTB Academy</li>
-                            <li><strong>Books:</strong> 'The Web Application Hacker's Handbook'</li>
-                            <li><strong>Communities:</strong> OWASP, 2600, local ISACA chapters</li>
+                            <li><strong>◦ Certifications:</strong> Security+, CEH, OSCP</li>
+                            <li><strong>◦ Platforms:</strong> TryHackMe, VulnHub, HTB Academy</li>
+                            <li><strong>◦ Books:</strong> 'The Web Application Hacker's Handbook'</li>
+                            <li><strong>◦ Communities:</strong> OWASP, 2600, local ISACA chapters</li>
                         </ul>
                     </div>
                     <div class="resource-section">
                         <h3>Career Paths</h3>
                         <ul>
-                            <li>SOC Analyst → Security Engineer → Security Architect</li>
-                            <li>Penetration Tester → Senior Consultant → Security Manager</li>
-                            <li>Bug Bounty Hunter → Security Researcher → Product Security</li>
+                            <li>◦ SOC Analyst → Security Engineer → Security Architect</li>
+                            <li>◦ Penetration Tester → Senior Consultant → Security Manager</li>
+                            <li>◦ Bug Bounty Hunter → Security Researcher → Product Security</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 23: Q&A -->
-        <div class="slide" data-slide="23">
-            <div class="slide-content">
-                <h1>🤔 Your Questions & Discussion</h1>
-                <h2>Q&A Session</h2>
-                <div class="qa-sections">
-                    <div class="qa-section">
-                        <h3>Common Questions</h3>
-                        <ul>
-                            <li>'How long does it take to become a penetration tester?'</li>
-                            <li>'What's the best certification to start with?'</li>
-                            <li>'Is programming knowledge required?'</li>
-                            <li>'How do I get my first cybersecurity job?'</li>
-                            <li>'What's the difference between ethical and malicious hacking?'</li>
-                        </ul>
-                    </div>
-                    <div class="qa-section">
-                        <h3>Open Floor Topics</h3>
-                        <ul>
-                            <li>Tools we demonstrated tonight</li>
-                            <li>Career advice & pathways</li>
-                            <li>Technical questions about demonstrations</li>
-                            <li>Resources for continued learning</li>
-                            <li>Industry insights & trends</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 24: Thank You -->
         <div class="slide" data-slide="24">
             <div class="slide-content">
-                <h1>🤝 Stay Connected!</h1>
-                <h2>Thank You & Contact Information</h2>
+                <h1>Stay Connected!</h1>
                 <p class="thank-you">Thank you for an engaging session!</p>
                 <div class="contact-info">
-                    <div class="contact-item">📧 Email: [your-email]</div>
-                    <div class="contact-item">💼 LinkedIn: [your-linkedin]</div>
-                    <div class="contact-item">🐦 Twitter: [your-twitter]</div>
-                    <div class="contact-item">🌐 Website/Blog: [your-website]</div>
+                    <div class="contact-item">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Email" style="width:20px;height:20px;vertical-align:middle;margin-right:8px;">
+                        Email: pralin.khaira.1903@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" style="width:20px;height:20px;vertical-align:middle;margin-right:8px;">
+                        LinkedIn: <a href="https://linkedin.com/in/pralinkhaira/" target="_blank">linkedin.com/in/pralinkhaira/</a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:20px;height:20px;vertical-align:middle;margin-right:8px;">
+                        Instagram: <a href="https://instagram.com/tbh.yoursss" target="_blank">instagram.com/tbh.yoursss</a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="Portfolio" style="width:20px;height:20px;vertical-align:middle;margin-right:8px;">
+                        Portfolio: <a href="https://pralinkhaira.github.io" target="_blank">pralinkhaira.github.io</a>
+                    </div>
                 </div>
-                <div class="shared-resources">
-                    <h3>Shared Resources</h3>
-                    <ul>
-                        <li>Tonight's presentation slides</li>
-                        <li>DVWA setup guide</li>
-                        <li>Burp Suite configuration checklist</li>
-                        <li>Recommended learning roadmap</li>
-                        <li>Community links & forums</li>
-                    </ul>
+                <div class="shared-resources" style="text-align:center;">
+                    <img src="Images/logo Bsides.png" alt="BSides Logo" style="height:140px;max-width:240px;object-fit:contain;margin:16px auto;display:block;">
                 </div>
-                <p class="feedback">Please share your thoughts on tonight's session - what worked well, what could be improved, and what topics you'd like to see in future sessions.</p>
                 <p class="closing">Keep learning, stay ethical, and happy hacking! 🛡️</p>
             </div>
         </div>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
