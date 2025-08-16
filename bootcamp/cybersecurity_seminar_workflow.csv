@@ -1,0 +1,9 @@
+Phase,Duration_minutes,Content,Key_Activities,Best_Practices,Cumulative_Time,Start_Time,End_Time
+Pre-Presentation Setup,15,"Environment setup, DVWA deployment, tool verification","Check DVWA, Burp Suite, John setup; Prepare demo scenarios",Test all tools beforehand; Have backup scenarios ready,15,8:45 PM,9:00 PM
+Opening & Introduction,5,"Welcome, presenter intro, agenda overview","Set expectations, brief agenda walkthrough",Start with energy; Use engaging hook/recent cyber incident,20,9:00 PM,9:05 PM
+Conceptual Foundation,10,Red/Blue/Purple teams explained with examples,"Interactive definitions, real-world examples, team roles",Use visual aids; Keep technical jargon minimal initially,30,9:05 PM,9:15 PM
+Platform Differentiation,10,CTF vs HTB vs Bug Bounty differences and use cases,"Compare platforms with pros/cons, career paths",Provide clear career guidance; Share platform experiences,40,9:15 PM,9:25 PM
+Hands-on Demo 1,15,Burp Suite: Live intercept demo with DVWA,"Live interception, request modification, vulnerability discovery",Keep audience engaged; Explain every step clearly,55,9:25 PM,9:40 PM
+Hands-on Demo 2,15,John the Ripper: Password cracking walkthrough,"Hash extraction, wordlist attacks, password cracking modes",Show different attack scenarios; Explain ethical boundaries,70,9:40 PM,9:55 PM
+Interactive Practice,20,Participants try tools on DVWA challenges,"Guided practice sessions, troubleshooting, peer learning",Encourage questions; Provide individual assistance,90,9:55 PM,10:15 PM
+Q&A and Wrap-up,10,"Address questions, provide resources, next steps","Collect feedback, share learning resources, networking",End with actionable takeaways; Provide contact information,100,10:15 PM,10:25 PM
