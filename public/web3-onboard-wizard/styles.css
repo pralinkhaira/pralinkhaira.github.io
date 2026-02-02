@@ -1,0 +1,92 @@
+/* Basic styling for the entire page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Styling for the main content container */
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styling for the main heading */
+h1 {
+  color: #333;
+  padding: 20px;
+}
+
+/* Styling for buttons */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the status text */
+#status {
+  font-weight: bold;
+}
+
+/* Center-align styling for container */
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styling for select dropdown and buttons */
+select, button {
+  display: block;
+  margin: 10px auto;
+}
+
+/* Styling for the token transfer section */
+.transfer-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Styling for each transfer option */
+.transfer-option {
+  margin-right: 20px; /* Adjust the spacing between the label-dropdown pairs */
+}
+
+/* Styling for feature buttons */
+.feature-buttons {
+  display: flex;
+  gap: 20px; /* Adjust the spacing between the buttons */
+  align-items: center;
+}
+
+/* Styling for the feature support section */
+.feature-support {
+  text-align: center;
+}
+
+/* Styling for the feature dropdown */
+#featureDropdown {
+  margin: 20px auto;
+}
+
+/* Styling for the feature description */
+#featureDescription {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px; /* Adjust the width as needed */
+}

@@ -1,2 +1,0 @@
-# pralinkhaira.github.io
-..
