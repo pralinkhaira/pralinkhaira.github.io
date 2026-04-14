@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import { roles, heroDescription, heroButtons } from '../data/portfolioData';
-import SocialCard from './SocialCard';
 
 export default function Hero() {
   return (
