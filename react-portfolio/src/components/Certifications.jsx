@@ -64,7 +64,7 @@ export default function Certifications() {
         {/* Main Certifications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {mainCertifications.map((cert, i) => (
-            <CertCard key={cert.title} cert={cert} index={i} />
+            <CertCard key={i} cert={cert} index={i} />
           ))}
         </div>
 
@@ -110,7 +110,7 @@ export default function Certifications() {
               {/* Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {additionalCertifications.map((cert, i) => (
-                  <CertCard key={cert.title} cert={cert} index={i} />
+                  <CertCard key={i} cert={cert} index={i} />
                 ))}
               </div>
             </motion.div>
