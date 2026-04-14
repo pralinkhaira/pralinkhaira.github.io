@@ -1,0 +1,71 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: react-portfolio/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: react-portfolio
+
+      - name: Build React App
+        run: npm run build
+        working-directory: react-portfolio
+
+      - name: Stage Site for Deployment
+        run: |
+          mkdir -p staging
+          
+          # 1. Copy project folders from root to staging to keep legacy project links working
+          # Excluding source folders, hidden folders, and build outputs
+          for dir in */; do
+            dir=${dir%/}
+            if [[ "$dir" != "react-portfolio" && "$dir" != "node_modules" && "$dir" != "staging" && "$dir" != ".github" ]]; then
+              echo "Including project: $dir"
+              cp -r "$dir" staging/
+            fi
+          done
+
+          # 2. Copy root files that might be needed (excluding the old index.html and source-related files)
+          # We want to keep things like LICENSE, README, but the new index.html comes from React
+          cp LICENSE staging/ 2>/dev/null || true
+          
+          # 3. Copy the built React app (this provides the new index.html and assets)
+          # This overwrites the legacy homepage at staging/index.html
+          cp -r react-portfolio/dist/* staging/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './staging'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
