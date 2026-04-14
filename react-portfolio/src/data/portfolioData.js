@@ -20,10 +20,10 @@ export const roles = [
 export const heroDescription = `I'm a versatile web designer, ethical hacker, and freelancer with strong skills in HTML, CSS, JavaScript, Python, C, and C++. I'm passionate about creating visually stunning websites with seamless functionality and have honed my craft on platforms like Freelancer.com. Additionally, I bring creativity and expertise to video editing, enhancing footage and adding captivating effects. I thrive in collaborative environments, am always eager to expand my knowledge, and am ready to bring your ideas to life online. Let's create something remarkable together.`;
 
 export const heroButtons = [
-  { text: 'Explore My Work', icon: '🚀', href: '#work' },
-  { text: 'View Resume', icon: '📄', href: 'https://drive.google.com/file/d/1Hv1jwDSb85aYE3teuqgp4ELGKaxhRkhi/view?usp=drive_link', external: true },
-  { text: 'Email Me', icon: '✉️', href: 'mailto:pralin.khaira.1903@gmail.com' },
-  { text: 'Call Me', icon: '📞', href: 'tel:+917780831020' },
+  { text: 'Explore My Work', icon: 'rocket', href: '#work' },
+  { text: 'View Resume', icon: 'file', href: 'https://drive.google.com/file/d/1Hv1jwDSb85aYE3teuqgp4ELGKaxhRkhi/view?usp=drive_link', external: true },
+  { text: 'Email Me', icon: 'mail', href: 'mailto:pralin.khaira.1903@gmail.com' },
+  { text: 'Call Me', icon: 'phone', href: 'tel:+917780831020' },
   { text: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/in/pralinkhaira/', external: true },
 ];
 

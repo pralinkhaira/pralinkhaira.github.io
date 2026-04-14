@@ -1,7 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Rocket, FileText, Mail, Phone } from 'lucide-react';
 import { FaLinkedin } from 'react-icons/fa';
 import { roles, heroDescription, heroButtons } from '../data/portfolioData';
+
+const buttonIconMap = {
+  rocket: Rocket,
+  file: FileText,
+  mail: Mail,
+  phone: Phone,
+  linkedin: FaLinkedin,
+};
 
 export default function Hero() {
   const [activeRoleIndex, setActiveRoleIndex] = useState(0);
@@ -83,7 +92,10 @@ export default function Hero() {
                 {btn.text}
               </span>
               <span className="absolute inset-0 flex items-center justify-center text-xl transition-all duration-300 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100">
-                {btn.icon === 'linkedin' ? <FaLinkedin size={22} /> : btn.icon}
+                {(() => {
+                  const Icon = buttonIconMap[btn.icon];
+                  return Icon ? <Icon size={22} /> : btn.icon;
+                })()}
               </span>
             </a>
           ))}
