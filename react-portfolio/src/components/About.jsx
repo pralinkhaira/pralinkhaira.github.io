@@ -188,7 +188,7 @@ export default function About() {
               className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
               {experiences.map((item, i) => (
-                <ExperienceCard key={item.title} item={item} index={i} />
+                <ExperienceCard key={item.title + item.company} item={item} index={i} />
               ))}
             </motion.div>
           )}
@@ -201,7 +201,7 @@ export default function About() {
               className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
               {education.map((item, i) => (
-                <EducationCard key={item.title} item={item} index={i} />
+                <EducationCard key={item.title + item.institution} item={item} index={i} />
               ))}
             </motion.div>
           )}
@@ -214,7 +214,7 @@ export default function About() {
               className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
               {miscellaneous.map((item, i) => (
-                <MiscCard key={item.title} item={item} index={i} />
+                <MiscCard key={item.title + index} item={item} index={i} />
               ))}
             </motion.div>
           )}
