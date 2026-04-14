@@ -1,8 +1,18 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import { roles, heroDescription, heroButtons } from '../data/portfolioData';
 
 export default function Hero() {
+  const [activeRoleIndex, setActiveRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="home"
@@ -18,28 +28,29 @@ export default function Hero() {
           >
             I'm a
           </motion.span>
-          <div className="h-[50px] sm:h-[70px] lg:h-[90px] overflow-hidden relative">
+          <div className="h-[50px] sm:h-[70px] lg:h-[90px] overflow-hidden relative flex items-center">
             {/* Decorative floating elements */}
             <div className="absolute -top-3 -left-6 w-8 h-8 bg-gradient-to-br from-brand to-brand-2 rounded-full animate-pulse-glow z-[-1] opacity-50" />
             <div className="absolute -bottom-3 -right-6 w-5 h-5 bg-gradient-to-br from-brand-2 to-brand rounded-full animate-pulse-glow z-[-1] opacity-50" style={{ animationDelay: '1s' }} />
 
-            <div className="animate-slide">
-              {roles.map((role, i) => (
-                <div
-                  key={i}
-                  className="h-[50px] sm:h-[70px] lg:h-[90px] flex items-center pr-2"
+            <div className="relative h-full flex items-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeRoleIndex}
+                  initial={{ y: 40, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -40, opacity: 0 }}
+                  transition={{ 
+                    duration: 0.5,
+                    ease: "easeOut"
+                  }}
+                  className="h-full flex items-center pr-2"
                 >
                   <span className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-mono tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-blue-700 to-blue-900 dark:from-brand dark:to-brand-2 dark:animate-text-glow lg:-mt-2 pb-2">
-                    {role}
+                    {roles[activeRoleIndex]}
                   </span>
-                </div>
-              ))}
-              {/* Duplicate first for seamless loop */}
-              <div className="h-[50px] sm:h-[70px] lg:h-[90px] flex items-center pr-2">
-                <span className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-mono tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-blue-700 to-blue-900 dark:from-brand dark:to-brand-2 dark:animate-text-glow lg:-mt-2 pb-2">
-                  {roles[0]}
-                </span>
-              </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>
