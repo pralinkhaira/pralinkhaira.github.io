@@ -20,33 +20,32 @@ export default function Hero() {
     >
       <div className="max-w-4xl">
         {/* Dynamic Text */}
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-baseline gap-2 sm:gap-4 mb-6">
           <motion.span
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-light dark:text-gray-100 text-gray-900 whitespace-nowrap"
+            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold dark:text-white text-gray-900 whitespace-nowrap"
           >
             I'm a
           </motion.span>
-          <div className="h-[50px] sm:h-[70px] lg:h-[90px] overflow-hidden relative flex items-center">
+          <div className="h-[50px] sm:h-[70px] lg:h-[90px] overflow-hidden relative">
             {/* Decorative floating elements */}
             <div className="absolute -top-3 -left-6 w-8 h-8 bg-gradient-to-br from-brand to-brand-2 rounded-full animate-pulse-glow z-[-1] opacity-50" />
-            <div className="absolute -bottom-3 -right-6 w-5 h-5 bg-gradient-to-br from-brand-2 to-brand rounded-full animate-pulse-glow z-[-1] opacity-50" style={{ animationDelay: '1s' }} />
-
+            
             <div className="relative h-full flex items-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeRoleIndex}
-                  initial={{ y: 40, opacity: 0 }}
+                  initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -40, opacity: 0 }}
+                  exit={{ y: -20, opacity: 0 }}
                   transition={{ 
-                    duration: 0.5,
+                    duration: 0.4,
                     ease: "easeOut"
                   }}
-                  className="h-full flex items-center pr-2"
+                  className="flex items-center"
                 >
-                  <span className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-mono tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-blue-700 to-blue-900 dark:from-brand dark:to-brand-2 dark:animate-text-glow lg:-mt-2 pb-2">
+                  <span className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-mono tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-blue-700 to-blue-900 dark:from-brand dark:to-brand-2 dark:animate-text-glow">
                     {roles[activeRoleIndex]}
                   </span>
                 </motion.div>
