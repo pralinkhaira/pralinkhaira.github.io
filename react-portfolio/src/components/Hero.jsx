@@ -60,7 +60,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="flex flex-wrap gap-4 items-center"
+          className="flex flex-wrap gap-3"
         >
           {heroButtons.map((btn, i) => (
             <a
@@ -68,7 +68,7 @@ export default function Hero() {
               href={btn.href}
               target={btn.external ? '_blank' : undefined}
               rel={btn.external ? 'noopener noreferrer' : undefined}
-              className="group relative overflow-hidden px-8 py-3.5 rounded-xl bg-brand text-white font-bold text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/25 hover:bg-brand-2"
+              className="group relative overflow-hidden px-6 py-3 rounded-xl bg-brand text-white font-bold text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand/30 hover:bg-brand-2"
             >
               <span className="inline-block transition-all duration-300 group-hover:opacity-0">
                 {btn.text}
@@ -78,15 +78,6 @@ export default function Hero() {
               </span>
             </a>
           ))}
-        </motion.div>
-
-        {/* Social Links Card */}
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: 0.8 }}
-        >
-          <SocialCard />
         </motion.div>
       </div>
     </section>
