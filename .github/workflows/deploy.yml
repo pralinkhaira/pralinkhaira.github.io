@@ -24,7 +24,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
           cache-dependency-path: react-portfolio/package-lock.json
 
@@ -41,7 +41,6 @@ jobs:
           mkdir -p staging
           
           # 1. Copy project folders from root to staging to keep legacy project links working
-          # Excluding source folders, hidden folders, and build outputs
           for dir in */; do
             dir=${dir%/}
             if [[ "$dir" != "react-portfolio" && "$dir" != "node_modules" && "$dir" != "staging" && "$dir" != ".github" ]]; then
@@ -50,22 +49,24 @@ jobs:
             fi
           done
 
-          # 2. Copy root files that might be needed (excluding the old index.html and source-related files)
-          # We want to keep things like LICENSE, README, but the new index.html comes from React
+          # 2. Copy root files that might be needed
           cp LICENSE staging/ 2>/dev/null || true
           
           # 3. Copy the built React app (this provides the new index.html and assets)
-          # This overwrites the legacy homepage at staging/index.html
           cp -r react-portfolio/dist/* staging/
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './staging'
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
