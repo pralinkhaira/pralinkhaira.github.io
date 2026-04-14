@@ -1,14 +1,4 @@
-import { Mail } from 'lucide-react';
-import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
-import { socialLinks } from '../data/portfolioData';
-
-const iconMap = {
-  Linkedin: FaLinkedin,
-  Mail,
-  Github: FaGithub,
-  Facebook: FaFacebook,
-  Instagram: FaInstagram,
-};
+import SocialCard from './SocialCard';
 
 export default function Footer() {
   return (
