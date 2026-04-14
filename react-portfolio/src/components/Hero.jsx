@@ -86,7 +86,7 @@ export default function Hero() {
               href={btn.href}
               target={btn.external ? '_blank' : undefined}
               rel={btn.external ? 'noopener noreferrer' : undefined}
-              className="group relative overflow-hidden px-6 py-3 rounded-xl bg-brand text-white font-bold text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand/30 hover:bg-brand-2"
+              className="group relative overflow-hidden px-6 py-3 rounded-xl bg-brand text-white font-bold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-brand/30 hover:bg-brand-2"
             >
               <span className="inline-block transition-all duration-300 group-hover:opacity-0">
                 {btn.text}
