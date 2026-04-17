@@ -221,7 +221,7 @@ export default function About() {
           >
             About
           </motion.span>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black dark:text-white text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black dark:text-white text-gray-900 mb-6 tracking-tight font-outfit">
             My Education & <span className="gradient-text">Experience</span>
           </h2>
           <p className="max-w-2xl mx-auto text-lg dark:text-gray-400 text-gray-600 leading-relaxed">

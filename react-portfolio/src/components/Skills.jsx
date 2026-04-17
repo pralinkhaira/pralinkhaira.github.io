@@ -39,7 +39,7 @@ export default function Skills() {
           >
             Capabilities
           </motion.span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black dark:text-white text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black dark:text-white text-gray-900 mb-6 tracking-tight font-outfit">
             Technical <span className="gradient-text">Proficiency</span>
           </h2>
           <p className="max-w-2xl mx-auto text-lg dark:text-gray-400 text-gray-600 leading-relaxed">

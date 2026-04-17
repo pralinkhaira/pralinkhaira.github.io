@@ -47,7 +47,7 @@ export default function Work() {
           >
             Portfolio
           </motion.span>
-          <h2 className="text-5xl sm:text-6xl lg:text-8xl font-black dark:text-white text-gray-900 mb-8 tracking-tighter leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black dark:text-white text-gray-900 mb-8 tracking-tight leading-tight font-outfit">
             Recent <span className="gradient-text">Projects</span>
           </h2>
           <p className="max-w-2xl mx-auto text-lg sm:text-xl dark:text-gray-400 text-gray-600 leading-relaxed">

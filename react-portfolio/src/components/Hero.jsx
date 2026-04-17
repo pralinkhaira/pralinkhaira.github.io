@@ -36,25 +36,25 @@ export default function Hero() {
           <motion.span
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-6xl lg:text-8xl font-black dark:text-white text-gray-900 tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight dark:text-white text-gray-900 font-outfit"
           >
             I'm a
           </motion.span>
-          <div className="h-[60px] sm:h-[80px] lg:h-[100px] overflow-hidden relative w-full">
+          <div className="h-[50px] sm:h-[70px] lg:h-[90px] overflow-hidden relative w-full">
             <div className="relative h-full flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeRoleIndex}
-                  initial={{ y: 30, opacity: 0 }}
+                  initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -30, opacity: 0 }}
+                  exit={{ y: -20, opacity: 0 }}
                   transition={{ 
                     duration: 0.5,
                     ease: [0.23, 1, 0.32, 1]
                   }}
-                  className="flex items-center justify-center"
+                  className="flex items-center justify-center font-outfit"
                 >
-                  <span className="text-4xl sm:text-6xl lg:text-8xl font-black font-mono tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-brand via-brand-2 to-brand animate-text-glow">
+                  <span className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-brand via-brand-2 to-brand animate-text-glow">
                     {roles[activeRoleIndex]}
                   </span>
                 </motion.div>
