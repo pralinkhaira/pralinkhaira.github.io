@@ -15,7 +15,7 @@ function ExperienceCard({ item, index }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="group relative"
+      className="group relative h-full"
     >
       <div className="absolute -inset-0.5 bg-gradient-to-r from-brand to-brand-2 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 blur-sm" />
       
@@ -79,11 +79,11 @@ function EducationCard({ item, index }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="group relative"
+      className="group relative h-full"
     >
       <div className="absolute -inset-0.5 bg-gradient-to-r from-brand to-brand-2 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 blur-sm" />
       
-      <div className="relative dark:bg-gray-900/90 bg-white p-8 rounded-[22px] border dark:border-white/10 border-gray-200 transition-all duration-300 backdrop-blur-xl group-hover:dark:bg-gray-900/95">
+      <div className="relative dark:bg-gray-900/90 bg-white p-8 rounded-[22px] border dark:border-white/10 border-gray-200 transition-all duration-300 backdrop-blur-xl h-full flex flex-col group-hover:dark:bg-gray-900/95">
         <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-6">
           <div>
             <h4 className="text-xl font-bold dark:text-white text-gray-900 mb-1 group-hover:text-brand transition-colors">{item.title}</h4>
@@ -92,9 +92,9 @@ function EducationCard({ item, index }) {
           <span className="shrink-0 text-brand text-[10px] font-black px-4 py-1.5 bg-brand/10 rounded-full border border-brand/20 tracking-widest uppercase">{item.period}</span>
         </div>
         
-        <p className="text-sm dark:text-gray-400 text-gray-600 leading-relaxed mb-6">{item.description}</p>
+        <p className="text-sm dark:text-gray-400 text-gray-600 leading-relaxed mb-6 flex-grow">{item.description}</p>
         
-        <div className="flex items-center gap-3 p-4 rounded-2xl dark:bg-white/5 bg-gray-50 border dark:border-white/5 border-gray-200">
+        <div className="flex items-center gap-3 p-4 rounded-2xl dark:bg-white/5 bg-gray-50 border dark:border-white/5 border-gray-200 mt-auto">
           <div className="p-2 rounded-lg bg-brand/10 text-brand">
             <AwardIcon size={18} />
           </div>
@@ -114,7 +114,7 @@ function MiscCard({ item, index }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="group relative overflow-hidden"
+      className="group relative overflow-hidden h-full"
     >
       <div className="absolute -inset-0.5 bg-gradient-to-r from-brand to-brand-2 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 blur-sm" />
       
