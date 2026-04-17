@@ -25,36 +25,36 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center py-20 px-4 lg:px-8 border-b-2 dark:border-white/5 border-gray-200"
+      className="min-h-screen flex flex-col justify-center py-20 px-4 lg:px-8 border-b dark:border-white/5 border-gray-200 overflow-hidden relative"
     >
-      <div className="max-w-4xl">
-        {/* Dynamic Text */}
-        <div className="flex items-baseline gap-2 sm:gap-4 mb-6">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-brand/5 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="max-w-5xl mx-auto text-center relative z-10">
+        {/* Dynamic Text - Centered */}
+        <div className="flex flex-col items-center justify-center gap-4 mb-8">
           <motion.span
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold dark:text-white text-gray-900 whitespace-nowrap"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl sm:text-6xl lg:text-8xl font-black dark:text-white text-gray-900 tracking-tight"
           >
             I'm a
           </motion.span>
-          <div className="h-[50px] sm:h-[70px] lg:h-[90px] overflow-hidden relative">
-            {/* Decorative floating elements */}
-            <div className="absolute -top-3 -left-6 w-8 h-8 bg-gradient-to-br from-brand to-brand-2 rounded-full animate-pulse-glow z-[-1] opacity-50" />
-            
-            <div className="relative h-full flex items-center">
+          <div className="h-[60px] sm:h-[80px] lg:h-[100px] overflow-hidden relative w-full">
+            <div className="relative h-full flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeRoleIndex}
-                  initial={{ y: 20, opacity: 0 }}
+                  initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -20, opacity: 0 }}
+                  exit={{ y: -30, opacity: 0 }}
                   transition={{ 
-                    duration: 0.4,
-                    ease: "easeOut"
+                    duration: 0.5,
+                    ease: [0.23, 1, 0.32, 1]
                   }}
-                  className="flex items-center"
+                  className="flex items-center justify-center"
                 >
-                  <span className="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-mono tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-blue-700 to-blue-900 dark:from-brand dark:to-brand-2 dark:animate-text-glow">
+                  <span className="text-4xl sm:text-6xl lg:text-8xl font-black font-mono tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-brand via-brand-2 to-brand animate-text-glow">
                     {roles[activeRoleIndex]}
                   </span>
                 </motion.div>
@@ -63,22 +63,22 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Description */}
+        {/* Description - Centered */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-base sm:text-lg dark:text-gray-400 text-gray-600 leading-relaxed mb-8 max-w-3xl"
+          className="text-lg sm:text-xl dark:text-gray-400 text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto"
         >
           {heroDescription}
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - Centered */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="flex flex-wrap gap-3"
+          className="flex flex-wrap justify-center gap-4"
         >
           {heroButtons.map((btn, i) => (
             <a
