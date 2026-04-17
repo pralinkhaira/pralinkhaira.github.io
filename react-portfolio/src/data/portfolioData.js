@@ -145,17 +145,6 @@ export const projects = [
 
 export const experiences = [
   {
-    title: 'Cybersecurity Analyst Intern',
-    period: 'Apr. 2026 - Present',
-    company: 'Zorvyn FinTech Pvt. Ltd. (Remote)',
-    skills: 'Security Analysis, Threat Assessment, Vulnerability Assessment, Log Analysis, Security Monitoring.',
-    points: [
-      'Working as a Cybersecurity Analyst Intern at a FinTech company, focusing on security analysis and threat assessment.',
-      'Applying hands-on cybersecurity skills including vulnerability assessment, log analysis, and security monitoring.',
-      'Collaborating in a fully remote environment with cross-functional teams on security deliverables.',
-    ],
-  },
-  {
     title: 'Full Stack Developer',
     period: 'Jan. 2026 - Apr. 2026',
     company: 'Aronix Web Technology',
