@@ -5,9 +5,47 @@
   --color-brand-2: #1e90ff;
   --color-brand-dark: #0099cc;
   --font-sans: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
 }
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Grain/Noise Texture */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  filter: contrast(150%) brightness(100%);
+}
+
+[data-theme='light'] .noise {
+  opacity: 0.01;
+}
+
+/* Custom Cursor */
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  background: var(--color-brand);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: screen;
+  filter: blur(20px);
+  opacity: 0.4;
+  transition: transform 0.1s ease-out;
+}
+
+.font-outfit {
+  font-family: var(--font-outfit);
+}
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {

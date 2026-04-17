@@ -28,13 +28,16 @@ export default function Navbar({ theme, toggleTheme }) {
     <>
       {/* Mobile Navbar */}
       <nav
-        className={`lg:hidden fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-4 transition-all duration-300 ${
+        className={`lg:hidden fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-6 transition-all duration-300 ${
           scrolled
             ? 'dark:bg-gray-900 bg-white/95 backdrop-blur-lg shadow-lg shadow-black/20'
             : 'dark:bg-gray-900 bg-white/80 backdrop-blur-md'
         }`}
       >
-        <span className="text-lg font-bold dark:text-white text-gray-900">Pralin Khaira.</span>
+        <span className="text-xl font-black tracking-tighter font-outfit">
+          <span className="dark:text-white text-gray-900">Pralin</span>
+          <span className="gradient-text">.</span>
+        </span>
         <div className="flex items-center gap-3">
           <div className="scale-75 origin-right flex items-center justify-center">
             <ThemeSwitch theme={theme} toggleTheme={toggleTheme} />
@@ -79,7 +82,7 @@ export default function Navbar({ theme, toggleTheme }) {
         }}
       >
         {/* Profile Image Slideshow */}
-        <div className="relative w-[180px] h-[180px] mb-6">
+        <div className="relative w-[180px] h-[180px] mb-4">
           {profileImages.map((img, i) => (
             <img
               key={i}
@@ -90,6 +93,13 @@ export default function Navbar({ theme, toggleTheme }) {
               }`}
             />
           ))}
+        </div>
+
+        {/* Brand Name */}
+        <div className="mb-6 text-center">
+            <h1 className="text-2xl font-black tracking-tighter font-outfit text-white">
+                Pralin<span className="gradient-text">.</span>
+            </h1>
         </div>
 
         {/* Nav Links */}
