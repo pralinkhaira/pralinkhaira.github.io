@@ -72,6 +72,26 @@ export default function App() {
       {/* Content wrapper - offset for sidebar on desktop */}
       <div className="lg:pl-60 pt-16 lg:pt-0">
         <Hero />
+        
+        {/* Video Showcase Section */}
+        <section className="py-12 px-4 lg:px-8 border-b dark:border-white/5 border-gray-200 flex justify-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="w-full max-w-5xl aspect-video rounded-2xl md:rounded-[32px] overflow-hidden shadow-2xl shadow-brand/10 border dark:border-white/10 border-gray-200"
+          >
+            <iframe
+              className="w-full h-full"
+              src="https://drive.google.com/file/d/1e47-jpu2tLvpwqqDudDuTbjGDJ6VcmPB/preview"
+              title="About Me | Why You Should Pick Me | whoami | Pralin Khaira"
+              frameBorder="0"
+              allow="autoplay"
+              allowFullScreen
+            ></iframe>
+          </motion.div>
+        </section>
+
         <Work />
         <About />
         <Skills />
