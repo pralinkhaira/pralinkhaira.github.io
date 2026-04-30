@@ -15,6 +15,7 @@ export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -79,16 +80,32 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-full max-w-5xl aspect-video rounded-2xl md:rounded-[32px] overflow-hidden shadow-2xl shadow-brand/10 border dark:border-white/10 border-gray-200"
+            className="w-full max-w-5xl aspect-video rounded-2xl md:rounded-[32px] overflow-hidden shadow-2xl shadow-brand/10 border dark:border-white/10 border-gray-200 relative group cursor-pointer"
+            onClick={() => setIsVideoPlaying(true)}
           >
-            <iframe
-              className="w-full h-full"
-              src="https://drive.google.com/file/d/1e47-jpu2tLvpwqqDudDuTbjGDJ6VcmPB/preview"
-              title="About Me | Why You Should Pick Me | whoami | Pralin Khaira"
-              frameBorder="0"
-              allow="autoplay"
-              allowFullScreen
-            ></iframe>
+            {!isVideoPlaying ? (
+              <>
+                <img 
+                  src="https://raw.githubusercontent.com/pralinkhaira/pralinkhaira.github.io/refs/heads/main/react-portfolio/src/assets/thumb.png" 
+                  alt="Video Thumbnail" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors duration-500">
+                  <div className="w-20 h-20 md:w-24 md:h-24 bg-brand/90 backdrop-blur-sm text-white rounded-full flex items-center justify-center pl-2 shadow-[0_0_40px_rgba(0,191,255,0.4)] group-hover:scale-110 group-hover:bg-brand transition-all duration-500">
+                    <svg className="w-10 h-10 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <iframe
+                className="w-full h-full"
+                src="https://drive.google.com/file/d/1e47-jpu2tLvpwqqDudDuTbjGDJ6VcmPB/preview"
+                title="About Me | Why You Should Pick Me | whoami | Pralin Khaira"
+                frameBorder="0"
+                allow="autoplay"
+                allowFullScreen
+              ></iframe>
+            )}
           </motion.div>
         </section>
 
