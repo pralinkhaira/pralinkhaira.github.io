@@ -10,6 +10,7 @@ import Blogs from './components/Blogs';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import thumbImg from './assets/thumb.png';
 
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
@@ -86,13 +87,13 @@ export default function App() {
             {!isVideoPlaying ? (
               <>
                 <img 
-                  src="https://raw.githubusercontent.com/pralinkhaira/pralinkhaira.github.io/refs/heads/main/react-portfolio/src/assets/thumb.png" 
+                  src={thumbImg}
                   alt="Video Thumbnail" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors duration-500">
-                  <div className="w-20 h-20 md:w-24 md:h-24 bg-brand/90 backdrop-blur-sm text-white rounded-full flex items-center justify-center pl-2 shadow-[0_0_40px_rgba(0,191,255,0.4)] group-hover:scale-110 group-hover:bg-brand transition-all duration-500">
-                    <svg className="w-10 h-10 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  <div className="w-20 h-20 md:w-24 md:h-24 bg-brand/90 backdrop-blur-sm text-white rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(0,191,255,0.4)] group-hover:scale-110 group-hover:bg-brand transition-all duration-500">
+                    <svg className="w-10 h-10 md:w-12 md:h-12 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
                   </div>
                 </div>
               </>
@@ -121,7 +122,7 @@ export default function App() {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed top-10 right-10 z-50 w-12 h-12 rounded-full bg-brand text-white flex items-center justify-center shadow-lg shadow-brand/30 transition-all duration-300 hover:scale-110 ${
+        className={`fixed bottom-10 right-10 z-50 w-12 h-12 rounded-full bg-brand text-white flex items-center justify-center shadow-lg shadow-brand/30 transition-all duration-300 hover:scale-110 ${
           showBackToTop ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
         title="Back to top"

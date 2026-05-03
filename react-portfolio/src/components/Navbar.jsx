@@ -44,7 +44,7 @@ export default function Navbar({ theme, toggleTheme }) {
           </div>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white dark:text-white dark:hover:bg-white/20 hover:bg-black/10 text-gray-900 hover:text-black transition-colors"
+            className="w-9 h-9 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center text-gray-900 dark:text-white hover:bg-black/10 dark:hover:bg-white/20 transition-colors"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>

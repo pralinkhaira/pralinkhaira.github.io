@@ -312,7 +312,7 @@ export const socialLinks = [
   { icon: 'Mail', url: 'mailto:pralin.khaira.1903@gmail.com' },
   { icon: 'Github', url: 'https://github.com/pralinkhaira' },
   { icon: 'Facebook', url: 'https://www.facebook.com/pralin.khaira.5/' },
-  { icon: 'Instagram', url: 'https://www.instagram.com/tbh.yoursss/' },
+  { icon: 'Instagram', url: 'https://www.instagram.com/pralin.khaira/' },
 ];
 
 export const navLinks = [
